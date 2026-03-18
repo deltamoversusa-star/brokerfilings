@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrokerFilings.com — FMCSA Broker Authority Filing Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1F3A;
+  --navy2: #122848;
+  --navy3: #1A3560;
+  --green: #1B6B3A;
+  --green2: #228B4A;
+  --green3: #2AAF5E;
+  --green-lt: #E8F5EE;
+  --gold: #C9A84C;
+  --gold-lt: #F5EDD3;
+  --white: #FFFFFF;
+  --off-white: #F7F8F5;
+  --gray: #6B7A8D;
+  --gray-lt: #E8ECF0;
+  --seal: #8B1A1A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--off-white);
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-seal {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: -1px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.logo-tagline {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.header-cta {
+  background: var(--green2);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.header-cta:hover { background: var(--green3); }
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 40px 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.015) 40px,
+    rgba(255,255,255,0.015) 41px
+  ),
+  repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.015) 40px,
+    rgba(255,255,255,0.015) 41px
+  );
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 50%;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 6px 14px;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--green3);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+  display: block;
+}
+
+.hero p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.hero-stat {
+  border-left: 2px solid var(--gold);
+  padding-left: 16px;
+}
+
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* PRICING CARD */
+.pricing-card {
+  background: var(--white);
+  border-top: 4px solid var(--gold);
+  padding: 36px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+.pricing-card::before {
+  content: 'ALL-INCLUSIVE';
+  position: absolute;
+  top: -1px;
+  right: 24px;
+  background: var(--green2);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  padding: 4px 10px;
+  transform: translateY(-100%);
+}
+
+.pricing-label {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pricing-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pricing-sub {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.pricing-divider {
+  height: 1px;
+  background: var(--gray-lt);
+  margin-bottom: 20px;
+}
+
+.pricing-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--navy);
+}
+
+.pricing-check {
+  width: 18px;
+  height: 18px;
+  background: var(--green-lt);
+  border: 1px solid var(--green2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 10px;
+  color: var(--green2);
+  font-weight: 700;
+}
+
+.pricing-note {
+  background: var(--off-white);
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--gray);
+  margin: 16px 0 20px;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: var(--green2);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary:hover { background: var(--green3); }
+
+.btn-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.btn-trust::before {
+  content: '🔒';
+  font-size: 11px;
+}
+
+/* SECTION */
+section {
+  padding: 80px 40px;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  color: var(--green2);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 17px;
+  color: var(--gray);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+/* PROCESS */
+.process-bg {
+  background: var(--navy);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: rgba(201,168,76,0.3);
+  z-index: 0;
+}
+
+.process-step {
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.process-num {
+  width: 64px;
+  height: 64px;
+  background: var(--navy2);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 auto 20px;
+}
+
+.process-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.process-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+/* INCLUDES */
+.includes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-lt);
+}
+
+.include-item {
+  background: var(--white);
+  padding: 32px;
+}
+
+.include-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--green-lt);
+  border: 1px solid rgba(27,107,58,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.include-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.include-desc {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.include-tag {
+  display: inline-block;
+  background: var(--gold-lt);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin-top: 12px;
+}
+
+/* FAQ */
+.faq-bg { background: var(--off-white); }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.faq-item {
+  background: var(--white);
+  border-left: 3px solid var(--green2);
+  padding: 24px 28px;
+}
+
+.faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.faq-a {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* CTA SECTION */
+.cta-section {
+  background: var(--navy);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 50%;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.cta-inner h2 span { color: var(--gold); }
+
+.cta-inner p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.btn-cta-large {
+  display: inline-block;
+  background: var(--green2);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 18px 48px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-cta-large:hover { background: var(--green3); }
+
+.cta-guarantee {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* FOOTER */
+footer {
+  background: #070F1C;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  padding: 40px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.7;
+}
+
+.footer-disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  margin-top: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--green2);
+  padding: 14px 40px;
+}
+
+.trust-bar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.trust-icon {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .process-grid::before { display: none; }
+  .includes-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 36px; }
+  .trust-bar-inner { flex-wrap: wrap; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-seal">BF</div>
+      <div class="logo-text">
+        <div class="logo-name">BrokerFilings.com</div>
+        <div class="logo-tagline">FMCSA Authority Filing Service</div>
+      </div>
+    </div>
+    <a href="#get-started" class="header-cta">Get Started — $1,799</a>
+  </div>
+</header>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="trust-icon">✓</span> FMCSA Authorized Filing Specialists</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> All Fees Included — No Surprises</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> 4–6 Week Average Approval</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Full Support Until Approved</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">FMCSA Broker Authority Specialists</div>
+      <h1>Get Your Moving Broker Authority. <span>We Handle Everything.</span></h1>
+      <p>Starting a moving brokerage requires a federal broker authority from the FMCSA. The process is complex, slow, and easy to get wrong. We handle every step — from filing to approval — so you can focus on building your business.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">$300</div>
+          <div class="hero-stat-label">FMCSA fee included</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4–6 wks</div>
+          <div class="hero-stat-label">Average approval</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Managed for you</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING CARD -->
+    <div class="pricing-card" id="get-started">
+      <div class="pricing-label">Complete Filing Package</div>
+      <div class="pricing-amount">$1,799</div>
+      <div class="pricing-sub">One-time fee — all government fees included</div>
+      <div class="pricing-divider"></div>
+
+      <div class="pricing-item">
+        <div class="pricing-check">✓</div>
+        <span>FMCSA OP-1 Broker Authority Filing</span>
+      </div>
+      <div class="pricing-item">
+        <div class="pricing-check">✓</div>
+        <span>BOC-3 Process Agent Filing</span>
+      </div>
+      <div class="pricing-item">
+        <div class="pricing-check">✓</div>
+        <span>Surety Bond Guidance & Referral</span>
+      </div>
+      <div class="pricing-item">
+        <div class="pricing-check">✓</div>
+        <span>EIN & LLC Setup Guidance</span>
+      </div>
+      <div class="pricing-item">
+        <div class="pricing-check">✓</div>
+        <span>Full Compliance Checklist</span>
+      </div>
+      <div class="pricing-item">
+        <div class="pricing-check">✓</div>
+        <span>FMCSA Follow-Up Until Approved</span>
+      </div>
+
+      <div class="pricing-note">
+        All government filing fees are included in the $1,799 price. No hidden costs.
+      </div>
+
+      <a href="#" class="btn-primary" onclick="alert('Stripe checkout coming soon — email info@brokerfilings.com to get started today.')">
+        Start My Application →
+      </a>
+      <div class="btn-trust">Secure payment via Stripe</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process-bg">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:56px;">
+      <div class="section-label" style="color:var(--gold);">How It Works</div>
+      <div class="section-title" style="color:var(--white);">Six Steps to Your Broker Authority</div>
+      <div class="section-sub" style="color:rgba(255,255,255,0.45);margin:0 auto;">We manage every step. You just answer our questions and wait for your approval.</div>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-title">Purchase & Intake</div>
+        <div class="process-desc">Complete payment and fill out our intake form with your business details</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-title">Entity Setup</div>
+        <div class="process-desc">We guide you through LLC formation and EIN registration if needed</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-title">OP-1 Filing</div>
+        <div class="process-desc">We prepare and submit your FMCSA Broker Authority application</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-title">BOC-3 Filing</div>
+        <div class="process-desc">Process agent registered in every state your brokerage operates</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <div class="process-title">Surety Bond</div>
+        <div class="process-desc">We connect you with a bonding provider for your $75K required bond</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">6</div>
+        <div class="process-title">Authority Granted</div>
+        <div class="process-desc">Your FMCSA broker authority is active — you are ready to operate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDES -->
+<section class="faq-bg">
+  <div class="section-inner">
+    <div class="section-label">What Is Included</div>
+    <div class="section-title">Everything You Need to Launch Legally</div>
+    <div class="section-sub">The $1,799 package covers every filing, every fee, and every step from application to approval.</div>
+
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-icon">📋</div>
+        <div class="include-title">FMCSA OP-1 Filing</div>
+        <div class="include-desc">The federal application for your broker operating authority. We prepare, review, and submit the complete OP-1 form on your behalf. The $300 FMCSA filing fee is included.</div>
+        <div class="include-tag">$300 fee included</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">⚖️</div>
+        <div class="include-title">BOC-3 Process Agent</div>
+        <div class="include-desc">Federal law requires a registered process agent in every state. We handle the BOC-3 filing and arrange your process agent coverage nationwide. Fee included.</div>
+        <div class="include-tag">Fee included</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🔐</div>
+        <div class="include-title">Surety Bond Guidance</div>
+        <div class="include-desc">The FMCSA requires a $75,000 surety bond for broker authority. We connect you with our bonding partners to secure competitive rates, typically $900–$2,000/year.</div>
+        <div class="include-tag">Referral included</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">🏢</div>
+        <div class="include-title">EIN & LLC Guidance</div>
+        <div class="include-desc">We walk you through forming your LLC and obtaining your Employer Identification Number — the two legal requirements before you can apply for broker authority.</div>
+        <div class="include-tag">Step-by-step guidance</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">📊</div>
+        <div class="include-title">Compliance Checklist</div>
+        <div class="include-desc">A complete checklist of everything required to operate as a licensed moving broker — from record-keeping requirements to customer disclosure obligations.</div>
+        <div class="include-tag">Full documentation</div>
+      </div>
+      <div class="include-item">
+        <div class="include-icon">📞</div>
+        <div class="include-title">FMCSA Follow-Up</div>
+        <div class="include-desc">We monitor your application status and follow up with the FMCSA on your behalf until your authority is granted. Average approval time is 4–6 weeks.</div>
+        <div class="include-tag">Until approved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--white);padding:80px 40px;">
+  <div class="section-inner">
+    <div class="section-label">Common Questions</div>
+    <div class="section-title">Frequently Asked Questions</div>
+    <div class="section-sub">Everything you need to know about getting your FMCSA broker authority.</div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Do I need a broker authority to operate a moving brokerage?</div>
+        <div class="faq-a">Yes. Federal law requires all moving brokers to hold a valid FMCSA Household Goods Broker Authority before accepting any customer payments or dispatching carriers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does the FMCSA approval process take?</div>
+        <div class="faq-a">Typically 4–6 weeks from the date of filing. We submit your application promptly and follow up with the FMCSA regularly to ensure there are no delays.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is a surety bond and how much does it cost?</div>
+        <div class="faq-a">The FMCSA requires moving brokers to maintain a $75,000 surety bond. Annual premiums are typically $900–$2,000 depending on your credit. We connect you with bonding partners who specialize in transportation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need an LLC before applying?</div>
+        <div class="faq-a">Yes. You need a legal business entity and an EIN before filing with the FMCSA. We guide you through both steps as part of the package.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I operate in multiple states with one authority?</div>
+        <div class="faq-a">Yes. A federal FMCSA broker authority allows you to operate in all 50 states. The BOC-3 filing we include ensures you have process agent coverage nationwide.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens after my authority is granted?</div>
+        <div class="faq-a">You are ready to legally operate as a moving broker. We recommend pairing your authority with MagickPlat — the moving broker OS that handles quotes, dispatch, carrier payments, and realtor referrals all in one platform.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2>Ready to Get Your <span>Broker Authority?</span></h2>
+    <p>Join hundreds of moving brokers who started their business the right way. We handle the federal filings — you focus on building your carrier network and dispatching jobs.</p>
+    <a href="#get-started" class="btn-cta-large">Start My Application — $1,799</a>
+    <div class="cta-guarantee">All government fees included · No hidden costs · Support until approved</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">BrokerFilings.com</div>
+  <div class="footer-text">
+    FMCSA Broker Authority Filing Service<br>
+    info@brokerfilings.com
+  </div>
+  <div class="footer-disclaimer">
+    BrokerFilings.com is a filing and consulting service. We are not a law firm and do not provide legal advice. 
+    FMCSA approval timelines are estimates and may vary. The $75,000 surety bond is purchased separately through third-party bonding providers.
+  </div>
+</footer>
+
+</body>
+</html>
