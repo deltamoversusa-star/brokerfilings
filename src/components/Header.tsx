@@ -11,6 +11,9 @@ export default function Header() {
             <div className="logo-tagline">FMCSA Authority Filing Service</div>
           </div>
         </Link>
+        <nav className="header-nav">
+          <Link href="/blog" className="header-nav-link">Blog</Link>
+        </nav>
         <a
           href="https://buy.stripe.com/28E3cv66Y26qaCK40zgA800"
           className="header-cta"

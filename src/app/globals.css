@@ -105,6 +105,25 @@ header {
 
 .header-cta:hover { background: var(--green3); }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-right: 24px;
+}
+
+.header-nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.header-nav-link:hover { color: var(--gold); }
+
 /* HERO */
 .hero {
   background: var(--navy);
@@ -617,6 +636,25 @@ footer {
   color: var(--gold);
   margin-bottom: 12px;
 }
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.footer-nav-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer-nav-link:hover { color: var(--gold); }
 
 .footer-text {
   font-size: 13px;

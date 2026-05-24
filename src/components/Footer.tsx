@@ -1,7 +1,13 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer>
       <div className="footer-logo">BrokerFilings.com</div>
+      <nav className="footer-nav">
+        <Link href="/" className="footer-nav-link">Home</Link>
+        <Link href="/blog" className="footer-nav-link">Blog</Link>
+      </nav>
       <div className="footer-text">
         FMCSA Broker Authority Filing Service<br />
         info@brokerfilings.com
