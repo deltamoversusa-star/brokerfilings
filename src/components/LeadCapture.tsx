@@ -22,6 +22,7 @@ export default function LeadCapture({ source }: { source?: string } = {}) {
   }
 
   return (
+    <div style={{ margin: "48px -40px" }}>
     <div className="lead-capture">
       <div className="lead-capture-inner">
         <h2>Not Ready Yet? Get the Free Moving Broker Launch Checklist.</h2>
@@ -49,6 +50,7 @@ export default function LeadCapture({ source }: { source?: string } = {}) {
 
         {status === 'error' && <p className="lead-error">{errorMsg}</p>}
       </div>
+    </div>
     </div>
   )
 }

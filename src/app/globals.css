@@ -879,6 +879,18 @@ footer {
   margin: 0 auto;
 }
 
+.article-body-inner .lead-capture {
+  margin: 48px -40px;
+}
+
+.article-body-inner .lead-capture h2 {
+  color: var(--white) !important;
+}
+
+.article-body-inner .lead-capture p {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
 .article-body h2 {
   font-family: var(--font-playfair), 'Playfair Display', serif;
   font-size: 26px;
