@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LeadCapture from '@/components/LeadCapture'
 
 export const metadata: Metadata = {
   title: 'How to Get FMCSA Broker Authority for a Moving Company',
@@ -163,6 +164,8 @@ export default function ArticlePage() {
             services can compress the entity setup to a few days. The FMCSA review itself is
             generally 4 to 6 weeks.
           </p>
+
+          <LeadCapture source="how-to-get-fmcsa-broker-authority" />
 
           <div className="article-cta">
             <h3>Ready to get started?</h3>

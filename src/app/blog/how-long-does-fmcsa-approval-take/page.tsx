@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LeadCapture from '@/components/LeadCapture'
 
 export const metadata: Metadata = {
   title: 'How Long Does FMCSA Broker Authority Approval Take?',
@@ -177,6 +178,8 @@ export default function ArticlePage() {
             a realistic buffer. Do not plan to be operational in 30 days — that timeline exists
             only in the best-case scenario.
           </p>
+
+          <LeadCapture source="how-long-does-fmcsa-approval-take" />
 
           <div className="article-cta">
             <h3>Ready to get started?</h3>

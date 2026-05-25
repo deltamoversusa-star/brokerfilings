@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LeadCapture from '@/components/LeadCapture'
 
 export const metadata: Metadata = {
   title: 'How Much Does It Cost to Start a Moving Brokerage?',
@@ -157,6 +158,8 @@ export default function ArticlePage() {
             $300, paying $1,799 for a complete, managed service often works out to be the
             economical choice — especially for first-time brokers unfamiliar with the process.
           </p>
+
+          <LeadCapture source="how-much-does-it-cost-to-start-a-moving-brokerage" />
 
           <div className="article-cta">
             <h3>Ready to get started?</h3>

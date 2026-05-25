@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { subscribeEmail } from '@/app/actions/subscribe'
 
-export default function LeadCapture() {
+export default function LeadCapture({ source }: { source?: string } = {}) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -12,7 +12,7 @@ export default function LeadCapture() {
     e.preventDefault()
     if (!email) return
     setStatus('loading')
-    const result = await subscribeEmail(email)
+    const result = await subscribeEmail(email, source)
     if (result.success) {
       setStatus('success')
     } else {

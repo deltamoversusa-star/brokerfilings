@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LeadCapture from '@/components/LeadCapture'
 
 export const metadata: Metadata = {
   title: 'Moving Broker License Requirements: What You Actually Need',
@@ -169,6 +170,8 @@ export default function ArticlePage() {
             <li>Provide proper shipper disclosures on every transaction</li>
             <li>Never dispatch to unregistered carriers</li>
           </ul>
+
+          <LeadCapture source="moving-broker-license-requirements" />
 
           <div className="article-cta">
             <h3>Ready to get started?</h3>

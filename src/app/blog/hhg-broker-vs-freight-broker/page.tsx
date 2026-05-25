@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import LeadCapture from '@/components/LeadCapture'
 
 export const metadata: Metadata = {
   title: 'HHG Broker vs. Freight Broker: Key Differences Explained',
@@ -156,6 +157,8 @@ export default function ArticlePage() {
             But starting with one — the one that aligns with your existing knowledge and network —
             is the practical approach for most new entrants.
           </p>
+
+          <LeadCapture source="hhg-broker-vs-freight-broker" />
 
           <div className="article-cta">
             <h3>Ready to get started?</h3>

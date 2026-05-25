@@ -145,7 +145,7 @@ function buildWelcomeEmail(email: string): string {
 </html>`
 }
 
-export async function subscribeEmail(email: string): Promise<{ success: boolean; error?: string }> {
+export async function subscribeEmail(email: string, source?: string): Promise<{ success: boolean; error?: string }> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
@@ -157,7 +157,7 @@ export async function subscribeEmail(email: string): Promise<{ success: boolean;
 
   const { error: dbError } = await supabase
     .from('broker_leads')
-    .insert({ email, source: 'homepage_checklist' })
+    .insert({ email, source: source ?? 'homepage_checklist' })
 
   if (dbError) {
     if (dbError.code === '23505') {
