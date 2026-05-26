@@ -2,6 +2,18 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles",
+    link: "https://brokerfilings.com/blog/ideas-for-small-business",
+    description: "Looking for ideas for small business with real income potential? Here's one that requires no truck, no employees, and under $2,500 to start legally.",
+    date: "Mon, 26 May 2025 00:00:00 GMT",
+  },
+  {
+    title: "What Is a BOC-3 Filing for Moving Brokers?",
+    link: "https://brokerfilings.com/blog/what-is-a-boc-3-filing-for-moving-brokers",
+    description: "Learn what a BOC-3 filing is, why every moving broker needs one, and how the process agent requirement works before FMCSA grants broker authority.",
+    date: "Mon, 19 May 2025 00:00:00 GMT",
+  },
+  {
     title: "How to Get Your FMCSA Broker Authority in 2026 — Step by Step",
     link: "https://brokerfilings.com/blog/how-to-get-fmcsa-broker-authority",
     description: "The exact steps to get your HHG moving broker authority from the FMCSA — Form OP-1, BOC-3, surety bond, and EIN. Everything you need to launch legally.",

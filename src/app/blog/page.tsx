@@ -18,6 +18,20 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'what-is-a-boc-3-filing-for-moving-brokers',
+    title: 'What Is a BOC-3 Filing for Moving Brokers?',
+    excerpt:
+      'Before the FMCSA approves your broker authority, you need a BOC-3 on file. Here is exactly what it is, why it is required, and how to get it done correctly.',
+    tag: 'Filing Guide',
+  },
+  {
+    slug: 'ideas-for-small-business',
+    title: 'Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles',
+    excerpt:
+      'Most small business idea lists give you the same recycled options. Here is one that rarely makes the list — federally licensed, under $2,500 to start, with two income streams from day one.',
+    tag: 'Entrepreneur Guide',
+  },
+  {
     slug: 'how-to-get-fmcsa-broker-authority',
     title: 'How to Get FMCSA Broker Authority for a Moving Company',
     excerpt:

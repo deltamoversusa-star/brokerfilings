@@ -3,6 +3,8 @@ import type { MetadataRoute } from 'next'
 const BASE_URL = 'https://brokerfilings.com'
 
 const blogPosts = [
+  'ideas-for-small-business',
+  'what-is-a-boc-3-filing-for-moving-brokers',
   'how-to-get-fmcsa-broker-authority',
   'how-much-does-it-cost-to-start-a-moving-brokerage',
   'moving-broker-license-requirements',
