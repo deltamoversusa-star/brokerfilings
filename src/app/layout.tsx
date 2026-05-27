@@ -34,9 +34,28 @@ export const metadata: Metadata = {
   },
 }
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BrokerFilings.com",
+  "url": "https://brokerfilings.com",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-407-603-1835",
+    "email": "info@brokerfilings.com",
+    "contactType": "Customer Service"
+  }
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body>
         <Header />
         <main>{children}</main>

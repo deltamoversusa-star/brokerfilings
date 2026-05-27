@@ -287,6 +287,17 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* CONTACT */}
+      <div style={{ textAlign: "center", padding: "24px 40px", borderTop: "1px solid rgba(0,0,0,0.08)" }}>
+        <p style={{ fontSize: "14px", color: "#6B7A8D", margin: 0 }}>
+          Questions? Call or text:{" "}
+          <a href="tel:+14076031835" style={{ color: "#228B4A", fontWeight: 600, textDecoration: "none" }}>
+            (407) 603-1835
+          </a>
+          {" "}· Mon–Fri 9am–6pm EST
+        </p>
+      </div>
+
       {/* LEAD CAPTURE */}
       <LeadCapture />
     </>
