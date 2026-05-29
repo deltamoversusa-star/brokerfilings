@@ -18,6 +18,13 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'moving-broker-surety-bond-requirements',
+    title: 'Moving Broker Surety Bond Requirements: What You Need to Know',
+    excerpt:
+      'The FMCSA requires a $75,000 surety bond for every moving broker. Here is what the bond covers, what it costs annually, and how to get it filed correctly.',
+    tag: 'Filing Guide',
+  },
+  {
     slug: 'what-is-a-boc-3-filing-for-moving-brokers',
     title: 'What Is a BOC-3 Filing for Moving Brokers?',
     excerpt:

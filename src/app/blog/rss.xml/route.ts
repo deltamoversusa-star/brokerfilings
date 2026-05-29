@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "Moving Broker Surety Bond Requirements: What You Need to Know",
+    link: "https://brokerfilings.com/blog/moving-broker-surety-bond-requirements",
+    description: "The FMCSA requires a $75,000 surety bond for every moving broker. Here's what the bond covers, what it costs, and how to get it filed correctly.",
+    date: "Thu, 29 May 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/moving-broker-surety-bond-requirements",
+  },
+  {
     title: "Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles",
     link: "https://brokerfilings.com/blog/ideas-for-small-business",
     description: "Looking for ideas for small business with real income potential? Here's one that requires no truck, no employees, and under $2,500 to start legally.",
