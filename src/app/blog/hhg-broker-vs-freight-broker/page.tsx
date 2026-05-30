@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LeadCapture from '@/components/LeadCapture'
+import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
   title: 'HHG Broker vs. Freight Broker: Key Differences Explained',
@@ -158,6 +159,7 @@ export default function ArticlePage() {
             is the practical approach for most new entrants.
           </p>
 
+          <MagickPlatBridge />
           <LeadCapture source="hhg-broker-vs-freight-broker" />
 
           <div className="article-cta">
@@ -172,6 +174,9 @@ export default function ArticlePage() {
               Start My Application
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
         </div>
       </div>
     </>

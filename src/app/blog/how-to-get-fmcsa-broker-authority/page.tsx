@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LeadCapture from '@/components/LeadCapture'
+import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
   title: 'How to Get FMCSA Broker Authority for a Moving Company',
@@ -165,6 +166,7 @@ export default function ArticlePage() {
             generally 4 to 6 weeks.
           </p>
 
+          <MagickPlatBridge />
           <LeadCapture source="how-to-get-fmcsa-broker-authority" />
 
           <div className="article-cta">
@@ -181,6 +183,9 @@ export default function ArticlePage() {
               Start My Application
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
         </div>
       </div>
     </>

@@ -1,7 +1,9 @@
 // FILE: src/app/blog/ideas-for-small-business/page.tsx
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import LeadCapture from "@/components/LeadCapture";
+import MagickPlatBridge from "@/components/MagickPlatBridge";
 
 export const metadata: Metadata = {
   title: "Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles | BrokerFilings",
@@ -143,6 +145,7 @@ export default function IdeasForSmallBusiness() {
           <p>Most small business idea lists won't show you this one. Now you know it exists.</p>
 
           {/* ── Lead Capture ── */}
+          <MagickPlatBridge />
           <LeadCapture source="ideas-for-small-business" />
 
           {/* ── CTA ── */}
@@ -158,6 +161,9 @@ export default function IdeasForSmallBusiness() {
               Start Free Trial at MagickPlat →
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
 
         </div>
       </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LeadCapture from '@/components/LeadCapture'
+import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
   title: 'Moving Broker License Requirements: What You Actually Need',
@@ -171,6 +172,7 @@ export default function ArticlePage() {
             <li>Never dispatch to unregistered carriers</li>
           </ul>
 
+          <MagickPlatBridge />
           <LeadCapture source="moving-broker-license-requirements" />
 
           <div className="article-cta">
@@ -185,6 +187,9 @@ export default function ArticlePage() {
               Start My Application
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
         </div>
       </div>
     </>

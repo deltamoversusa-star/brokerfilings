@@ -205,6 +205,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Already licensed or close? */}
+      <div style={{
+        background: '#0B1F3A',
+        borderTop: '1px solid rgba(201,168,76,0.2)',
+        borderBottom: '1px solid rgba(201,168,76,0.2)',
+        padding: '40px',
+        textAlign: 'center',
+      }}>
+        <p style={{ fontSize: '13px', color: '#C9A84C', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '12px' }}>
+          Already licensed — or getting close?
+        </p>
+        <h2 style={{ fontSize: '28px', fontWeight: 800, color: '#fff', marginBottom: '16px' }}>
+          Run your brokerage with MagickPlat
+        </h2>
+        <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.7 }}>
+          Carrier database. Dispatch board. Stripe escrow. Realtor referral network.
+          Built specifically for HHG moving brokers.
+        </p>
+        <a href="https://magickplat.com/get-started" target="_blank"
+          style={{ display: 'inline-block', padding: '12px 32px', background: '#228B4A', color: '#fff', fontWeight: 700, borderRadius: '8px', textDecoration: 'none', fontSize: '15px' }}>
+          Start Free Trial →
+        </a>
+      </div>
+
       {/* FAQ */}
       <section style={{ background: 'var(--white)', padding: '80px 40px' }}>
         <div className="section-inner">
@@ -254,9 +278,9 @@ export default function HomePage() {
             <div className="faq-item">
               <div className="faq-q">What happens after my authority is granted?</div>
               <div className="faq-a">
-                You are ready to legally operate as a moving broker. We recommend pairing your
-                authority with MagickPlat — the moving broker OS that handles quotes, dispatch,
-                carrier payments, and realtor referrals all in one platform.
+                You are ready to legally operate as a moving broker. See our full guide on{' '}
+                <a href="/after-licensing" style={{ color: '#228B4A' }}>what to do after your authority is granted</a>,
+                including platform setup, carrier onboarding, and your first job.
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LeadCapture from "@/components/LeadCapture";
+import MagickPlatBridge from "@/components/MagickPlatBridge";
 
 export const metadata: Metadata = {
   title: "Moving Broker Surety Bond Requirements: What You Need to Know | BrokerFilings",
@@ -140,6 +141,7 @@ export default function MovingBrokerSuretyBondRequirements() {
           <p>The $75,000 bond sounds large on paper. In practice, the annual cost is manageable, the filing process is straightforward when coordinated correctly, and it's a one-time setup that keeps your authority in good standing indefinitely — as long as you renew it on time, every year.</p>
 
           {/* ── Lead Capture ── */}
+          <MagickPlatBridge />
           <LeadCapture source="moving-broker-surety-bond-requirements" />
 
           {/* ── CTA ── */}
@@ -155,6 +157,9 @@ export default function MovingBrokerSuretyBondRequirements() {
               Start My Application
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
 
         </div>
       </div>

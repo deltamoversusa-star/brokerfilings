@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LeadCapture from '@/components/LeadCapture'
+import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
   title: 'How Much Does It Cost to Start a Moving Brokerage?',
@@ -159,6 +160,7 @@ export default function ArticlePage() {
             economical choice — especially for first-time brokers unfamiliar with the process.
           </p>
 
+          <MagickPlatBridge />
           <LeadCapture source="how-much-does-it-cost-to-start-a-moving-brokerage" />
 
           <div className="article-cta">
@@ -173,6 +175,9 @@ export default function ArticlePage() {
               Start My Application
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
         </div>
       </div>
     </>

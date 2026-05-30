@@ -1,7 +1,9 @@
 // FILE: src/app/blog/what-is-a-boc-3-filing-for-moving-brokers/page.tsx
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import LeadCapture from "@/components/LeadCapture";
+import MagickPlatBridge from "@/components/MagickPlatBridge";
 
 export const metadata: Metadata = {
   title: "What Is a BOC-3 Filing for Moving Brokers? | BrokerFilings",
@@ -123,6 +125,7 @@ export default function Boc3FilingMovingBrokers() {
           <p>The BOC-3 is a small piece of a larger puzzle, but it's a mandatory one. Getting it right — and getting it in at the right time — keeps your application moving without unnecessary delays.</p>
 
           {/* ── Lead Capture ── */}
+          <MagickPlatBridge />
           <LeadCapture source="what-is-a-boc-3-filing-for-moving-brokers" />
 
           {/* ── CTA ── */}
@@ -138,6 +141,9 @@ export default function Boc3FilingMovingBrokers() {
               Start My Application
             </a>
           </div>
+          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
+            Already licensed? <Link href="/after-licensing">See what to do next →</Link>
+          </p>
 
         </div>
       </div>
