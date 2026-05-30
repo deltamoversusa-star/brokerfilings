@@ -3,17 +3,17 @@ export default function MagickPlatBridge() {
     <div style={{
       margin: '48px 0',
       padding: '32px 36px',
-      background: 'linear-gradient(135deg, rgba(34,139,74,0.06) 0%, rgba(11,31,58,0.4) 100%)',
-      border: '1px solid rgba(34,139,74,0.2)',
+      background: 'linear-gradient(135deg, #0F2818 0%, #0B1F3A 100%)',
+      border: '1px solid rgba(34,139,74,0.35)',
       borderRadius: '16px',
     }}>
-      <p style={{ fontSize: '11px', fontWeight: 700, color: '#228B4A', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 12px' }}>
+      <p style={{ fontSize: '11px', fontWeight: 700, color: '#4ADE80', letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 12px' }}>
         After Your Broker Authority Is Approved
       </p>
-      <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#fff', margin: '0 0 12px', letterSpacing: '-0.02em' }}>
+      <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#FFFFFF', margin: '0 0 12px', letterSpacing: '-0.02em' }}>
         Getting licensed is step one. Now you need a system to operate.
       </h3>
-      <p style={{ fontSize: '15px', color: '#94A3B8', lineHeight: 1.7, margin: '0 0 20px' }}>
+      <p style={{ fontSize: '15px', color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 20px' }}>
         MagickPlat is the operating system built specifically for HHG moving brokers.
         Manage leads, dispatch carriers, collect payments, and build your realtor
         referral network — all in one platform.
@@ -26,8 +26,8 @@ export default function MagickPlatBridge() {
           'Built-in call scripts for every outreach contact',
         ].map(item => (
           <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-            <span style={{ color: '#228B4A', fontWeight: 700, flexShrink: 0 }}>→</span>
-            <span style={{ fontSize: '14px', color: '#CBD5E1' }}>{item}</span>
+            <span style={{ color: '#4ADE80', fontWeight: 700, flexShrink: 0 }}>→</span>
+            <span style={{ fontSize: '14px', color: '#F1F5F9' }}>{item}</span>
           </div>
         ))}
       </div>
@@ -49,7 +49,7 @@ export default function MagickPlatBridge() {
       >
         Explore MagickPlat — Free Trial →
       </a>
-      <p style={{ fontSize: '12px', color: '#475569', margin: '12px 0 0' }}>
+      <p style={{ fontSize: '12px', color: '#94A3B8', margin: '12px 0 0' }}>
         $499/month · Carrier database included · 30-day free trial
       </p>
     </div>
