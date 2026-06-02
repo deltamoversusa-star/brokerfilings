@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "How to Become an HHG Broker: Step-by-Step FMCSA Guide",
+    link: "https://brokerfilings.com/blog/how-to-become-an-hhg-broker",
+    description: "Learn how to become an HHG broker — from LLC formation to FMCSA authority approval. Full breakdown of every step, cost, and timeline involved.",
+    date: "Mon, 02 Jun 2025 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/how-to-become-an-hhg-broker",
+  },
+  {
     title: "Moving Broker Surety Bond Requirements: What You Need to Know",
     link: "https://brokerfilings.com/blog/moving-broker-surety-bond-requirements",
     description: "The FMCSA requires a $75,000 surety bond for every moving broker. Here's what the bond covers, what it costs, and how to get it filed correctly.",

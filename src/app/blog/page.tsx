@@ -18,6 +18,13 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'how-to-become-an-hhg-broker',
+    title: 'How to Become an HHG Broker: Step-by-Step FMCSA Guide',
+    excerpt:
+      'A complete walkthrough of every step required to get your FMCSA household goods broker authority — entity formation, OP-1 filing, surety bond, BOC-3, and timeline.',
+    tag: 'Getting Started',
+  },
+  {
     slug: 'moving-broker-surety-bond-requirements',
     title: 'Moving Broker Surety Bond Requirements: What You Need to Know',
     excerpt:
