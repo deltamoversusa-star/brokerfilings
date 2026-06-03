@@ -58,10 +58,10 @@ const posts = [
     guid: "https://brokerfilings.com/blog/hhg-broker-vs-freight-broker",
   },
   {
-    title: "How Long Does FMCSA Broker Authority Take to Get Approved",
+    title: "FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)",
     link: "https://brokerfilings.com/blog/how-long-does-fmcsa-approval-take",
-    description: "The FMCSA typically approves HHG broker authority applications in 4 to 6 weeks. Here is what affects the timeline and how to avoid delays.",
-    date: "Mon, 23 May 2026 00:00:00 GMT",
+    description: "FMCSA broker authority typically takes 4–6 weeks — but delays can push it to 12. Full stage-by-stage breakdown, common causes of delay, and a realistic planning timeline.",
+    date: "Thu, 01 May 2026 00:00:00 GMT",
     guid: "https://brokerfilings.com/blog/how-long-does-fmcsa-approval-take",
   },
 ];

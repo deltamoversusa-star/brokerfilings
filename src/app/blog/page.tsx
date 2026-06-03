@@ -75,9 +75,9 @@ const articles = [
   },
   {
     slug: 'how-long-does-fmcsa-approval-take',
-    title: 'How Long Does FMCSA Broker Authority Approval Take?',
+    title: 'FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)',
     excerpt:
-      'The FMCSA does not process applications overnight. Here is the realistic timeline for broker authority approval — and what can speed it up or slow it down.',
+      'FMCSA broker authority typically takes 4–6 weeks — but delays can push it to 12. Full stage-by-stage breakdown, common causes of delay, and a realistic planning timeline.',
     tag: 'FMCSA Process',
   },
 ]

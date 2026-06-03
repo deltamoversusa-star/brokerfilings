@@ -1,16 +1,18 @@
+// FILE: src/app/blog/how-long-does-fmcsa-approval-take/page.tsx
+
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LeadCapture from '@/components/LeadCapture'
 import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
-  title: 'How Long Does FMCSA Broker Authority Approval Take?',
+  title: 'FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)',
   description:
-    'The realistic FMCSA broker authority approval timeline — from filing to active MC number. What causes delays and how to speed up the process.',
+    'FMCSA broker authority typically takes 4–6 weeks — but delays can push it to 12. Here\'s exactly what happens at each stage, what causes delays, and how to avoid them.',
   openGraph: {
-    title: 'How Long Does FMCSA Broker Authority Approval Take?',
+    title: 'FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)',
     description:
-      'Realistic timelines for FMCSA broker authority approval — what takes so long and what you can do about it.',
+      'FMCSA broker authority typically takes 4–6 weeks — but delays can push it to 12. Here\'s exactly what happens at each stage, what causes delays, and how to avoid them.',
     url: 'https://brokerfilings.com/blog/how-long-does-fmcsa-approval-take',
   },
   alternates: { canonical: 'https://brokerfilings.com/blog/how-long-does-fmcsa-approval-take' },
@@ -18,20 +20,68 @@ export const metadata: Metadata = {
 
 const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long is the FMCSA protest period for broker authority?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The mandatory protest period is 10 days after Federal Register publication. During this time, existing carriers can formally object to your authority being granted. For HHG brokers, protests are extremely rare and this period almost always passes without incident."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the FMCSA protest period extend beyond 10 days?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If a formal protest is filed, resolution can take an additional 10 to 21 days depending on the nature of the objection. For standard HHG broker applications, this scenario is uncommon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the 4 to 6 week timeline include the protest period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The 4 to 6 week estimate assumes the protest period passes without incident and that your BOC-3 and surety bond are filed promptly in parallel with your OP-1 application."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the FMCSA broker registration processing time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard processing time is 4 to 6 weeks from a complete, accurate submission. Incomplete applications, delayed surety bond filings, or missing BOC-3 designations can push the total timeline to 8 to 12 weeks."
+      }
+    }
+  ]
+}
+
 export default function ArticlePage() {
   return (
     <>
+      {/* ── FAQ Schema Markup ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* ── Article Hero ── */}
       <div className="article-hero">
         <div className="article-hero-inner">
           <Link href="/blog" className="back-link">← Back to Blog</Link>
           <div className="article-tag">FMCSA Process</div>
-          <h1>How Long Does FMCSA Broker Authority Approval Take?</h1>
+          <h1>FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)</h1>
           <div className="article-meta">7 min read · Updated May 2026</div>
         </div>
       </div>
 
+      {/* ── Article Body ── */}
       <div className="article-body">
         <div className="article-body-inner">
+
           <p>
             One of the most common frustrations for people starting a moving brokerage is the
             waiting. The FMCSA does not process applications overnight, and the timeline involves
@@ -97,7 +147,7 @@ export default function ArticlePage() {
 
           <h2>Stage 4: Surety Bond Filing (Parallel Timeline)</h2>
           <p>
-            Your $75,000 surety bond must be filed by your bonding company (not by you) directly
+            Your $75,000 surety bond must be filed by your bonding company — not by you — directly
             with the FMCSA before your authority can activate. This is often the biggest variable
             in the approval timeline.
           </p>
@@ -120,19 +170,16 @@ export default function ArticlePage() {
           </p>
           <p>
             The FMCSA does not publish specific processing time guarantees, and their workload
-            fluctuates. Applications submitted during busy periods (spring and summer are peak
-            moving season and peak application volume) can take longer.
+            fluctuates. Applications submitted during busy periods — spring and summer are peak
+            moving season and peak application volume — can take longer.
           </p>
 
           <h2>What Causes Delays?</h2>
-          <p>
-            The most common causes of extended approval timelines include:
-          </p>
           <ul>
-            <li><strong>Application errors or incomplete information</strong> — leads to rejection and refiling</li>
-            <li><strong>Wrong application form</strong> — general freight broker vs. HHG-specific form</li>
-            <li><strong>Delay in obtaining surety bond</strong> — credit issues with bonding company</li>
-            <li><strong>Missing or late BOC-3 filing</strong> — process agent not engaged promptly</li>
+            <li><strong>Application errors or incomplete information</strong> — leads to rejection and refiling, plus an additional $300 fee</li>
+            <li><strong>Wrong application form</strong> — general freight broker vs. HHG-specific OP-1 form</li>
+            <li><strong>Delay in obtaining surety bond</strong> — credit issues or slow underwriting with bonding company</li>
+            <li><strong>Missing or late BOC-3 filing</strong> — process agent not engaged at the same time as OP-1</li>
             <li><strong>FMCSA system issues</strong> — occasional portal outages affect processing times</li>
             <li><strong>Seasonal volume</strong> — FMCSA receives significantly more applications in spring and early summer</li>
           </ul>
@@ -145,9 +192,9 @@ export default function ArticlePage() {
           <ul>
             <li>File a complete, accurate application the first time — no rejections and refiling</li>
             <li>Engage a process agent immediately and have the BOC-3 filed within the first week</li>
-            <li>Apply for your surety bond simultaneously with your FMCSA application</li>
+            <li>Apply for your surety bond simultaneously with your FMCSA application, not after</li>
             <li>Use a filing service that monitors your application status and follows up with the FMCSA</li>
-            <li>Have your LLC and EIN established before you file (not after)</li>
+            <li>Have your LLC and EIN established before you file — not during or after</li>
           </ul>
 
           <h2>When Can You Start Taking Customers?</h2>
@@ -163,13 +210,9 @@ export default function ArticlePage() {
           </p>
 
           <h2>Realistic Planning Timeline</h2>
-          <p>
-            If you are planning to launch your moving brokerage by a specific date, work backward
-            from that target with this framework:
-          </p>
           <ul>
             <li><strong>Week 1–2:</strong> Form LLC, obtain EIN, engage filing service</li>
-            <li><strong>Week 2–3:</strong> File OP-1, file BOC-3, apply for surety bond</li>
+            <li><strong>Week 2–3:</strong> File OP-1, file BOC-3, apply for surety bond simultaneously</li>
             <li><strong>Week 3–5:</strong> Federal Register protest period</li>
             <li><strong>Week 5–10:</strong> FMCSA final review and activation</li>
             <li><strong>Week 8–12:</strong> Target launch date with active authority</li>
@@ -177,15 +220,69 @@ export default function ArticlePage() {
           <p>
             Building 10 to 12 weeks into your timeline from the day you decide to start gives you
             a realistic buffer. Do not plan to be operational in 30 days — that timeline exists
-            only in the best-case scenario.
+            only in the best-case scenario with zero errors or delays.
           </p>
+
+          {/* ── FAQ Section ── */}
+          <h2>Frequently Asked Questions</h2>
+
+          <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0B1F3A", margin: "24px 0 8px" }}>
+            How long is the FMCSA protest period for broker authority?
+          </h3>
+          <p>
+            The mandatory protest period is 10 days after Federal Register publication. During
+            this time, existing carriers can formally object to your authority being granted. For
+            HHG brokers, protests are extremely rare and this period almost always passes without
+            incident.
+          </p>
+
+          <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0B1F3A", margin: "24px 0 8px" }}>
+            Can the protest period extend beyond 10 days?
+          </h3>
+          <p>
+            Yes. If a formal protest is filed, resolution can take an additional 10 to 21 days
+            depending on the nature of the objection. For standard HHG broker applications, this
+            scenario is uncommon — the protest mechanism is used most frequently against large
+            carrier authorities, not new brokerage filings.
+          </p>
+
+          <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0B1F3A", margin: "24px 0 8px" }}>
+            Does the 4 to 6 week timeline include the protest period?
+          </h3>
+          <p>
+            Yes. The 4 to 6 week estimate assumes the protest period passes without incident and
+            that your BOC-3 and surety bond are filed promptly in parallel with your OP-1
+            application. If either the bond or BOC-3 is delayed, the clock doesn't start on
+            final activation until both are confirmed in FMCSA records.
+          </p>
+
+          <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0B1F3A", margin: "24px 0 8px" }}>
+            What is the FMCSA broker registration processing time?
+          </h3>
+          <p>
+            The standard processing time is 4 to 6 weeks from a complete, accurate submission.
+            Incomplete applications, delayed surety bond filings, or missing BOC-3 designations
+            can push the total timeline to 8 to 12 weeks. Spring and summer submissions may
+            also take longer due to higher FMCSA application volume.
+          </p>
+
+          {/* ── MagickPlat Bridge ── */}
+          <div className="article-callout" style={{ marginTop: "40px" }}>
+            Now that you know the licensing timeline — here's what your first 90 days operating
+            your brokerage looks like with MagickPlat. Pre-loaded carrier database, built-in call
+            scripts, CRM, and subscription billing — so you're ready to book jobs the day your
+            authority goes active.{' '}
+            <Link href="https://magickplat.com/get-started" style={{ color: "#228B4A", fontWeight: "700", textDecoration: "none" }}>
+              See how MagickPlat works →
+            </Link>
+          </div>
 
           <MagickPlatBridge />
           <LeadCapture source="how-long-does-fmcsa-approval-take" />
 
           <div className="article-cta">
             <h3>Ready to get started?</h3>
-            <p>We handle every filing for $1,799 — all government fees included.</p>
+            <p>We handle every filing for $1,799 — all government fees included. Authority in 4 to 6 weeks.</p>
             <a
               href={STRIPE_LINK}
               className="btn-cta-large"
@@ -195,9 +292,11 @@ export default function ArticlePage() {
               Start My Application
             </a>
           </div>
+
           <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '13px', color: '#64748B' }}>
             Already licensed? <Link href="/after-licensing">See what to do next →</Link>
           </p>
+
         </div>
       </div>
     </>
