@@ -7,6 +7,14 @@ import LeadCapture from "@/components/LeadCapture";
 export const metadata: Metadata = {
   title: "How to Become an HHG Broker: Step-by-Step FMCSA Guide | BrokerFilings",
   description: "Learn how to become an HHG broker — from LLC formation to FMCSA authority approval. Full breakdown of every step, cost, and timeline involved.",
+  openGraph: {
+    title: "How to Become an HHG Broker: Step-by-Step FMCSA Guide",
+    description: "Learn how to become an HHG broker — from LLC formation to FMCSA authority approval. Full breakdown of every step, cost, and timeline involved.",
+    url: "https://brokerfilings.com/blog/how-to-become-an-hhg-broker",
+    type: "article",
+    images: [{ url: "https://brokerfilings.com/og-image.jpg", width: 1200, height: 630, alt: "How to Become an HHG Broker: Step-by-Step FMCSA Guide" }],
+  },
+  alternates: { canonical: "https://brokerfilings.com/blog/how-to-become-an-hhg-broker" },
 };
 
 const STRIPE_LINK = "https://buy.stripe.com/28E3cv66Y26qaCK40zgA800";

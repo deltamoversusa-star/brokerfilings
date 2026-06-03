@@ -8,6 +8,14 @@ import MagickPlatBridge from "@/components/MagickPlatBridge";
 export const metadata: Metadata = {
   title: "Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles | BrokerFilings",
   description: "Looking for ideas for small business with real income potential? Here's one that requires no truck, no employees, and under $2,500 to start legally.",
+  openGraph: {
+    title: "Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles",
+    description: "Looking for ideas for small business with real income potential? Here's one that requires no truck, no employees, and under $2,500 to start legally.",
+    url: "https://brokerfilings.com/blog/ideas-for-small-business",
+    type: "article",
+    images: [{ url: "https://brokerfilings.com/og-image.jpg", width: 1200, height: 630, alt: "Ideas for Small Business: Why Moving Brokerage Beats Most Side Hustles" }],
+  },
+  alternates: { canonical: "https://brokerfilings.com/blog/ideas-for-small-business" },
 };
 
 const MAGICK_LINK = "https://magickplat.com/get-started";

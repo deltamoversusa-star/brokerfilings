@@ -10,8 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Moving Broker License Requirements: What You Actually Need',
     description:
-      'Complete guide to federal and state license requirements for HHG moving brokers.',
+      'The federal and state requirements for operating a household goods moving brokerage legally — FMCSA authority, surety bond, BOC-3, and more.',
     url: 'https://brokerfilings.com/blog/moving-broker-license-requirements',
+    type: 'article',
+    images: [{ url: 'https://brokerfilings.com/og-image.jpg', width: 1200, height: 630, alt: 'Moving Broker License Requirements: What You Actually Need' }],
   },
   alternates: { canonical: 'https://brokerfilings.com/blog/moving-broker-license-requirements' },
 }

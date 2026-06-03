@@ -10,8 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How to Get FMCSA Broker Authority for a Moving Company',
     description:
-      'Step-by-step guide to the FMCSA OP-1 broker authority application for household goods movers.',
+      'Step-by-step guide to getting your FMCSA Household Goods Broker Authority. Learn what forms to file, fees to pay, and how long the process takes.',
     url: 'https://brokerfilings.com/blog/how-to-get-fmcsa-broker-authority',
+    type: 'article',
+    images: [{ url: 'https://brokerfilings.com/og-image.jpg', width: 1200, height: 630, alt: 'How to Get FMCSA Broker Authority for a Moving Company' }],
   },
   alternates: { canonical: 'https://brokerfilings.com/blog/how-to-get-fmcsa-broker-authority' },
 }

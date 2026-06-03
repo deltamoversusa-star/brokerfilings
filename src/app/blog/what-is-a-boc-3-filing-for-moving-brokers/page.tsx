@@ -8,6 +8,14 @@ import MagickPlatBridge from "@/components/MagickPlatBridge";
 export const metadata: Metadata = {
   title: "What Is a BOC-3 Filing for Moving Brokers? | BrokerFilings",
   description: "Learn what a BOC-3 filing is, why every moving broker needs one, and how the process agent requirement works before FMCSA grants broker authority.",
+  openGraph: {
+    title: "What Is a BOC-3 Filing for Moving Brokers?",
+    description: "Learn what a BOC-3 filing is, why every moving broker needs one, and how the process agent requirement works before FMCSA grants broker authority.",
+    url: "https://brokerfilings.com/blog/what-is-a-boc-3-filing-for-moving-brokers",
+    type: "article",
+    images: [{ url: "https://brokerfilings.com/og-image.jpg", width: 1200, height: 630, alt: "What Is a BOC-3 Filing for Moving Brokers?" }],
+  },
+  alternates: { canonical: "https://brokerfilings.com/blog/what-is-a-boc-3-filing-for-moving-brokers" },
 };
 
 const STRIPE_LINK = "https://buy.stripe.com/28E3cv66Y26qaCK40zgA800";

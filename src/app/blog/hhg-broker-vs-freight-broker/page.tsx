@@ -10,8 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'HHG Broker vs. Freight Broker: Key Differences Explained',
     description:
-      'The key regulatory and operational differences between household goods brokers and freight brokers.',
+      'Household goods brokers and freight brokers both need FMCSA authority, but the bond requirements, regulations, and operations are very different. Learn what sets them apart.',
     url: 'https://brokerfilings.com/blog/hhg-broker-vs-freight-broker',
+    type: 'article',
+    images: [{ url: 'https://brokerfilings.com/og-image.jpg', width: 1200, height: 630, alt: 'HHG Broker vs. Freight Broker: Key Differences Explained' }],
   },
   alternates: { canonical: 'https://brokerfilings.com/blog/hhg-broker-vs-freight-broker' },
 }

@@ -10,8 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How Much Does It Cost to Start a Moving Brokerage?',
     description:
-      'Every cost involved in launching a licensed household goods moving brokerage — from FMCSA fees to surety bonds.',
+      'Complete cost breakdown for starting a licensed HHG moving brokerage — FMCSA fees, surety bond, LLC formation, insurance, and filing service costs.',
     url: 'https://brokerfilings.com/blog/how-much-does-it-cost-to-start-a-moving-brokerage',
+    type: 'article',
+    images: [{ url: 'https://brokerfilings.com/og-image.jpg', width: 1200, height: 630, alt: 'How Much Does It Cost to Start a Moving Brokerage?' }],
   },
   alternates: {
     canonical:

@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     description:
       'FMCSA broker authority typically takes 4–6 weeks — but delays can push it to 12. Here\'s exactly what happens at each stage, what causes delays, and how to avoid them.',
     url: 'https://brokerfilings.com/blog/how-long-does-fmcsa-approval-take',
+    type: 'article',
+    images: [{ url: 'https://brokerfilings.com/og-image.jpg', width: 1200, height: 630, alt: 'FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)' }],
   },
   alternates: { canonical: 'https://brokerfilings.com/blog/how-long-does-fmcsa-approval-take' },
 }
