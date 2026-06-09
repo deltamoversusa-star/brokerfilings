@@ -205,6 +205,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* WHY TRUST */}
+      <section style={{ background: '#0B1F3A', padding: '80px 40px', borderTop: '1px solid rgba(201,168,76,0.15)' }}>
+        <div className="section-inner">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+            <div>
+              <div className="section-label" style={{ color: '#C9A84C' }}>
+                Why Trust BrokerFilings
+              </div>
+              <h2 className="section-title" style={{ color: '#fff', marginBottom: '20px' }}>
+                Built by Someone Who Did It First
+              </h2>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.8', marginBottom: '20px' }}>
+                BrokerFilings was built by Erica Dorsey — a tax accountant and
+                10-year HHG moving broker who filed her own FMCSA authority from
+                scratch before this service existed.
+              </p>
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.8', marginBottom: '32px' }}>
+                She made $200,000 in her first moving season starting with one
+                carrier. She built BrokerFilings because she remembered exactly
+                what it took to coordinate the OP-1, BOC-3, and surety bond
+                correctly — and wanted to eliminate that friction for everyone
+                who comes after her.
+              </p>
+              <a href="/our-story" style={{ display: 'inline-block', fontSize: '14px', fontWeight: 700, color: '#C9A84C', textDecoration: 'none', borderBottom: '1px solid rgba(201,168,76,0.4)', paddingBottom: '2px' }}>
+                Read the full founder story →
+              </a>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2px' }}>
+              {[
+                { number: '$200K', label: 'First Moving Season' },
+                { number: '10',   label: 'Years in HHG Industry' },
+                { number: '1',    label: 'Carrier to Start' },
+                { number: '2',    label: 'Platforms Built' },
+              ].map(({ number, label }) => (
+                <div key={label} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.12)', padding: '32px 24px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '36px', fontWeight: 900, color: '#C9A84C', fontFamily: 'var(--font-playfair)', lineHeight: 1, marginBottom: '8px' }}>{number}</div>
+                  <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Already licensed or close? */}
       <div style={{
         background: '#0B1F3A',
