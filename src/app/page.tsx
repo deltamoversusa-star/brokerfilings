@@ -222,6 +222,7 @@ export default function HomePage() {
         <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.7 }}>
           Carrier database. Dispatch board. Stripe escrow. Realtor referral network.
           Built specifically for HHG moving brokers.
+          Built by the same founder who filed her own FMCSA authority from scratch.
         </p>
         <a href="https://magickplat.com/get-started" target="_blank"
           style={{ display: 'inline-block', padding: '12px 32px', background: '#228B4A', color: '#fff', fontWeight: 700, borderRadius: '8px', textDecoration: 'none', fontSize: '15px' }}>
