@@ -4,7 +4,7 @@ import LeadCapture from '@/components/LeadCapture'
 import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
-  title: 'HHG Broker vs. Freight Broker: Key Differences Explained',
+  title: 'HHG Broker vs Freight Broker — Key Differences in 2026 | BrokerFilings',
   description:
     'Household goods brokers and freight brokers both need FMCSA authority, but the bond requirements, regulations, and operations are very different. Learn what sets them apart.',
   openGraph: {

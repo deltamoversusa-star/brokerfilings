@@ -6,7 +6,7 @@ import LeadCapture from '@/components/LeadCapture'
 import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
-  title: 'FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown)',
+  title: 'FMCSA Broker Authority Approval: 4–6 Weeks (Full Timeline Breakdown) | BrokerFilings',
   description:
     'FMCSA broker authority typically takes 4–6 weeks — but delays can push it to 12. Here\'s exactly what happens at each stage, what causes delays, and how to avoid them.',
   openGraph: {
@@ -56,6 +56,14 @@ const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The standard processing time is 4 to 6 weeks from a complete, accurate submission. Incomplete applications, delayed surety bond filings, or missing BOC-3 designations can push the total timeline to 8 to 12 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can you do while waiting for FMCSA broker authority approval?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "During the 4 to 6 week waiting period you can legally sign carrier agreements, build your carrier network, contact realtors, and set up your operating platform. You cannot collect customer deposits or dispatch jobs until your authority is Active in the FMCSA SAFER database. Most successful brokers use the waiting period to sign 5 to 10 carriers so subscription income begins on the day their authority activates."
       }
     }
   ]
@@ -266,6 +274,18 @@ export default function ArticlePage() {
             Incomplete applications, delayed surety bond filings, or missing BOC-3 designations
             can push the total timeline to 8 to 12 weeks. Spring and summer submissions may
             also take longer due to higher FMCSA application volume.
+          </p>
+
+          <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0B1F3A", margin: "24px 0 8px" }}>
+            What can you do while waiting for FMCSA broker authority approval?
+          </h3>
+          <p>
+            During the 4 to 6 week waiting period you can legally sign carrier agreements, build
+            your carrier network, contact realtors, and configure your operating platform. You
+            cannot collect customer deposits or dispatch jobs until your authority shows as Active
+            in the FMCSA SAFER database. Most successful brokers use the waiting period to sign 5
+            to 10 carriers so that carrier subscription income begins on the day their authority
+            activates — meaning the waiting period produces income rather than delaying it.
           </p>
 
           {/* ── MagickPlat Bridge ── */}

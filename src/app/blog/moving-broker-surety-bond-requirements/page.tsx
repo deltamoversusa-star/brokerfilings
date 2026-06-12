@@ -6,7 +6,7 @@ import LeadCapture from "@/components/LeadCapture";
 import MagickPlatBridge from "@/components/MagickPlatBridge";
 
 export const metadata: Metadata = {
-  title: "Moving Broker Surety Bond Requirements: What You Need to Know | BrokerFilings",
+  title: "Moving Broker Surety Bond: The $75,000 Requirement Explained | BrokerFilings",
   description: "The FMCSA requires a $75,000 surety bond for every moving broker. Here's what the bond covers, what it costs, and how to get it filed correctly.",
   openGraph: {
     title: "Moving Broker Surety Bond Requirements: What You Need to Know",

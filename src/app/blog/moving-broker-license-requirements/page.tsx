@@ -4,7 +4,7 @@ import LeadCapture from '@/components/LeadCapture'
 import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
-  title: 'Moving Broker License Requirements: What You Actually Need',
+  title: 'Moving Broker License Requirements — The Complete 2026 Checklist | BrokerFilings',
   description:
     'The federal and state requirements for operating a household goods moving brokerage legally — FMCSA authority, surety bond, BOC-3, and more.',
   openGraph: {

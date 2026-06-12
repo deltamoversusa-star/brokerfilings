@@ -6,7 +6,7 @@ import LeadCapture from "@/components/LeadCapture";
 import MagickPlatBridge from "@/components/MagickPlatBridge";
 
 export const metadata: Metadata = {
-  title: "What Is a BOC-3 Filing for Moving Brokers? | BrokerFilings",
+  title: "What Is a BOC-3 Filing? Why Every Moving Broker Needs One | BrokerFilings",
   description: "Learn what a BOC-3 filing is, why every moving broker needs one, and how the process agent requirement works before FMCSA grants broker authority.",
   openGraph: {
     title: "What Is a BOC-3 Filing for Moving Brokers?",

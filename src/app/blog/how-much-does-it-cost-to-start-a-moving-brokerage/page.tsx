@@ -4,7 +4,7 @@ import LeadCapture from '@/components/LeadCapture'
 import MagickPlatBridge from '@/components/MagickPlatBridge'
 
 export const metadata: Metadata = {
-  title: 'How Much Does It Cost to Start a Moving Brokerage?',
+  title: 'How Much Does It Cost to Start a Moving Brokerage? Under $2,500 | BrokerFilings',
   description:
     'Complete cost breakdown for starting a licensed HHG moving brokerage — FMCSA fees, surety bond, LLC formation, insurance, and filing service costs.',
   openGraph: {
