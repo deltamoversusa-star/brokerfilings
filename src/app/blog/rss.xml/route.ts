@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "How to Start an HHG Brokerage in 2026: Full FMCSA Guide",
+    link: "https://brokerfilings.com/blog/how-to-start-an-hhg-brokerage-in-2026",
+    description: "Learn how to start an HHG brokerage in 2026 — LLC, EIN, OP-1, surety bond, BOC-3. Real costs, real timeline, built by someone who did it first.",
+    date: "Fri, 12 Jun 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/how-to-start-an-hhg-brokerage-in-2026",
+  },
+  {
     title: "How to Become an HHG Broker: Step-by-Step FMCSA Guide",
     link: "https://brokerfilings.com/blog/how-to-become-an-hhg-broker",
     description: "Learn how to become an HHG broker — from LLC formation to FMCSA authority approval. Full breakdown of every step, cost, and timeline involved.",

@@ -18,6 +18,13 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'how-to-start-an-hhg-brokerage-in-2026',
+    title: 'How to Start an HHG Brokerage in 2026: Full FMCSA Guide',
+    excerpt:
+      'Every step required to go from zero to active FMCSA household goods broker authority in 2026 — LLC, EIN, OP-1, BOC-3, surety bond, and realistic timeline.',
+    tag: 'Getting Started',
+  },
+  {
     slug: 'how-to-become-an-hhg-broker',
     title: 'How to Become an HHG Broker: Step-by-Step FMCSA Guide',
     excerpt:
