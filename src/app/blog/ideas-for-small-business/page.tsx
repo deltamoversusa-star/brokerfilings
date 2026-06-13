@@ -83,14 +83,13 @@ export default function IdeasForSmallBusiness() {
 
           <p><strong>Stream 1: Job dispatch margin.</strong> A customer contacts you for a move. You quote them $2,800. You book a licensed carrier to execute the move for $1,900. Your gross margin on that job: $900. Close 10 jobs a month and that's $9,000 in dispatch margin. Close 6 and it's $5,400. The math is direct.</p>
 
-          <p><strong>Stream 2: Carrier subscription income.</strong> This is the part most people don't know about. Using a platform like MagickPlat, carriers pay a monthly subscription fee of $99 per month to be in your active dispatch network. As the broker, you keep $89.10 of that per carrier, per month, whether you dispatch jobs to them or not. Build a network of 20 active carriers and that's $1,782 per month in subscription income before you book a single job.</p>
+          <p><strong>Stream 2: Carrier subscription income.</strong> This is the part most people don't know about. Using a platform like MagickPlat, carriers pay a monthly subscription fee to be in your active dispatch network. As the broker, you keep the majority of each carrier subscription, whether you dispatch jobs to them or not. A growing carrier network generates income that compounds monthly — before you book a single job.</p>
 
           <div style={{ background: "#E8F5EE", border: "1px solid rgba(34,139,74,0.2)", borderRadius: "12px", padding: "24px 28px", margin: "24px 0" }}>
             {[
               ["10 jobs/month @ $900 margin each", "$9,000/mo"],
-              ["20 carrier subscriptions @ $89.10 each", "$1,782/mo"],
-              ["Combined monthly income (example)", "$10,782/mo"],
-              ["Annual run rate", "$129,384/yr"],
+              ["Carrier subscription income (20-carrier network)", "Recurring monthly"],
+              ["Combined monthly income", "Dispatch margin + recurring subscriptions"],
             ].map(([label, value], i, arr) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 0", borderBottom: i < arr.length - 1 ? "1px solid rgba(34,139,74,0.15)" : "none" }}>
                 <span style={{ fontSize: "14px", color: "#6B7A8D" }}>{label}</span>
@@ -141,7 +140,7 @@ export default function IdeasForSmallBusiness() {
             <li><strong>Built-in call scripts</strong> for every carrier and realtor contact — personalized, not generic templates</li>
             <li><strong>Sales CRM</strong> with lead pipeline, quote builder, and payment collection built in</li>
             <li><strong>Realtor referral network</strong> that pays automatic 3–5% commissions on job completion — a second outbound channel beyond direct consumer leads</li>
-            <li><strong>Carrier subscription management</strong> so your $89.10/carrier/month income is tracked and collected automatically</li>
+            <li><strong>Carrier subscription management</strong> so the recurring income from your carrier network is tracked and collected automatically</li>
           </ul>
 
           <h2>Is This the Right Small Business Idea for You?</h2>
