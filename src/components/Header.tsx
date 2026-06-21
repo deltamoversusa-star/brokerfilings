@@ -1,6 +1,18 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
+const NAV_LINKS = [
+  { href: '/', label: 'Filing Service' },
+  { href: '/licensed-broker-training', label: 'Broker Course' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/our-story', label: 'Our Story' },
+]
+
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header>
       <div className="header-inner">
@@ -11,17 +23,34 @@ export default function Header() {
             <div className="logo-tagline">FMCSA Authority Filing Service</div>
           </div>
         </Link>
-        <nav className="header-nav">
-          <Link href="/blog" className="header-nav-link">Blog</Link>
-        </nav>
-        <a
-          href="https://buy.stripe.com/28E3cv66Y26qaCK40zgA800"
-          className="header-cta"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <button
+          type="button"
+          className="header-menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          Get Started — $1,799
-        </a>
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <nav className={`header-nav ${menuOpen ? 'header-nav-open' : ''}`}>
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="header-nav-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/course" className="header-login-btn" onClick={() => setMenuOpen(false)}>
+            Course Login
+          </Link>
+        </nav>
       </div>
     </header>
   )
