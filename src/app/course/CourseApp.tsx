@@ -149,14 +149,15 @@ function CloseIcon() {
 
 export default function CourseApp({
   authenticated: initialAuthenticated,
-  track,
+  accessLevel,
 }: {
   authenticated: boolean
-  track: 'full' | 'licensed'
+  accessLevel: 'bundle' | 'course'
 }) {
-  const visibleCourse = track === 'licensed' ? COURSE.filter((week) => week.week !== 1) : COURSE
-  const ALL_LESSONS = visibleCourse.flatMap((week) => week.lessons.map((lesson) => ({ ...lesson, week: week.week })))
-  const TOTAL_LESSONS = ALL_LESSONS.length
+  const visibleCourse = accessLevel === 'bundle' ? COURSE : COURSE.filter((w) => w.week !== 1)
+  const visibleLessons = visibleCourse.flatMap((week) => week.lessons.map((lesson) => ({ ...lesson, week: week.week })))
+  const totalLessons = visibleLessons.length
+  const firstLessonId = visibleLessons[0]?.id ?? '1-1'
 
   const [mounted, setMounted] = useState(false)
   const [authenticated, setAuthenticated] = useState(initialAuthenticated)
@@ -164,9 +165,9 @@ export default function CourseApp({
   const [codeInput, setCodeInput] = useState('')
   const [loginError, setLoginError] = useState('')
   const [loggingIn, setLoggingIn] = useState(false)
-  const [activeLessonId, setActiveLessonId] = useState(track === 'licensed' ? '2-1' : '1-1')
+  const [activeLessonId, setActiveLessonId] = useState(firstLessonId)
   const [completedLessons, setCompletedLessons] = useState<string[]>([])
-  const [expandedWeeks, setExpandedWeeks] = useState<number[]>(track === 'licensed' ? [2] : [1])
+  const [expandedWeeks, setExpandedWeeks] = useState<number[]>([visibleCourse[0]?.week ?? 1])
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -231,7 +232,7 @@ export default function CourseApp({
   function selectLesson(lessonId: string) {
     setActiveLessonId(lessonId)
     setMobileMenuOpen(false)
-    const lesson = ALL_LESSONS.find((l) => l.id === lessonId)
+    const lesson = visibleLessons.find((l) => l.id === lessonId)
     if (lesson && !expandedWeeks.includes(lesson.week)) {
       setExpandedWeeks((prev) => [...prev, lesson.week])
     }
@@ -293,10 +294,10 @@ export default function CourseApp({
     )
   }
 
-  const activeIndex = ALL_LESSONS.findIndex((l) => l.id === activeLessonId)
-  const activeLesson = ALL_LESSONS[activeIndex]
+  const activeIndex = visibleLessons.findIndex((l) => l.id === activeLessonId)
+  const activeLesson = visibleLessons[activeIndex]
   const isCompleted = completedLessons.includes(activeLesson.id)
-  const progressPercent = Math.round((completedLessons.length / TOTAL_LESSONS) * 100)
+  const progressPercent = Math.round((completedLessons.length / totalLessons) * 100)
 
   return (
     <div className="h-screen w-screen flex flex-col bg-gray-100">
@@ -319,17 +320,17 @@ export default function CourseApp({
 
         <div className="hidden lg:flex flex-col items-center text-center flex-1 min-w-0 px-2">
           <h1 className="text-base font-bold text-[#0B1F3A] truncate w-full">
-            {track === 'licensed' ? 'HHG Moving Broker Operations Track' : 'HHG Moving Broker Launch Program'}
+            {accessLevel === 'bundle' ? 'HHG Moving Broker Launch Program' : 'HHG Moving Broker Operations Track'}
           </h1>
           <p className="text-xs text-gray-500 truncate w-full">
-            {track === 'licensed' ? '6-Week Operations Track' : '7-Week Complete Course'} — {TOTAL_LESSONS} Lessons · Instructor: Erica Dorsey
+            {accessLevel === 'bundle' ? '7-Week Complete Course' : '6-Week Course'} — {totalLessons} Lessons · Instructor: Erica Dorsey
           </p>
         </div>
 
         <div className="flex items-center gap-3 md:gap-4 shrink-0">
           <div className="hidden sm:flex flex-col items-end w-36 md:w-44">
             <span className="text-xs text-gray-500 mb-1 whitespace-nowrap">
-              {completedLessons.length} of {TOTAL_LESSONS} lessons completed
+              {completedLessons.length} of {totalLessons} lessons completed
             </span>
             <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
               <div className="h-full bg-[#228B4A] transition-all" style={{ width: `${progressPercent}%` }} />
@@ -476,15 +477,15 @@ export default function CourseApp({
               <button
                 type="button"
                 disabled={activeIndex === 0}
-                onClick={() => selectLesson(ALL_LESSONS[activeIndex - 1].id)}
+                onClick={() => selectLesson(visibleLessons[activeIndex - 1].id)}
                 className="text-sm font-semibold text-[#0B1F3A] border border-gray-300 rounded-md px-4 py-2 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 ← Previous Lesson
               </button>
               <button
                 type="button"
-                disabled={activeIndex === ALL_LESSONS.length - 1}
-                onClick={() => selectLesson(ALL_LESSONS[activeIndex + 1].id)}
+                disabled={activeIndex === visibleLessons.length - 1}
+                onClick={() => selectLesson(visibleLessons[activeIndex + 1].id)}
                 className="text-sm font-semibold text-white bg-[#228B4A] rounded-md px-4 py-2 hover:bg-[#1B6B3A] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 Next Lesson →

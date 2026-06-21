@@ -7,7 +7,7 @@ import CourseApp from './CourseApp'
 export const metadata: Metadata = {
   title: 'HHG Moving Broker Launch Program — BrokerFilings',
   description:
-    '7-week course covering licensing, platform setup, carrier network, customer operations, payments, compliance, and scaling your moving brokerage.',
+    'Course covering licensing, platform setup, carrier network, customer operations, payments, compliance, and scaling your moving brokerage.',
 }
 
 const supabase = createClient(
@@ -20,22 +20,18 @@ export default async function CoursePage() {
   const token = cookieStore.get('bf_course_session')?.value
   const email = verifySessionToken(token)
 
-  let track: 'full' | 'licensed' = 'full'
-
-  if (email) {
-    const { data } = await supabase
-      .from('course_purchases')
-      .select('product')
-      .eq('email', email)
-      .eq('active', true)
-      .order('created_at', { ascending: false })
-      .limit(1)
-      .maybeSingle()
-
-    if (data?.product === 'course') {
-      track = 'licensed'
-    }
+  if (!email) {
+    return <CourseApp authenticated={false} accessLevel="course" />
   }
 
-  return <CourseApp authenticated={!!email} track={track} />
+  const { data: purchases } = await supabase
+    .from('course_purchases')
+    .select('product')
+    .eq('email', email)
+    .eq('active', true)
+
+  const hasBundle = purchases?.some((p) => p.product === 'bundle') ?? false
+  const accessLevel: 'bundle' | 'course' = hasBundle ? 'bundle' : 'course'
+
+  return <CourseApp authenticated={true} accessLevel={accessLevel} />
 }
