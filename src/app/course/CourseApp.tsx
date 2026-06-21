@@ -103,9 +103,6 @@ const COURSE: Week[] = [
   },
 ]
 
-const ALL_LESSONS = COURSE.flatMap((week) => week.lessons.map((lesson) => ({ ...lesson, week: week.week })))
-const TOTAL_LESSONS = ALL_LESSONS.length
-
 function CheckIcon() {
   return (
     <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-[#228B4A] shrink-0">
@@ -150,16 +147,26 @@ function CloseIcon() {
   )
 }
 
-export default function CourseApp({ authenticated: initialAuthenticated }: { authenticated: boolean }) {
+export default function CourseApp({
+  authenticated: initialAuthenticated,
+  track,
+}: {
+  authenticated: boolean
+  track: 'full' | 'licensed'
+}) {
+  const visibleCourse = track === 'licensed' ? COURSE.filter((week) => week.week !== 1) : COURSE
+  const ALL_LESSONS = visibleCourse.flatMap((week) => week.lessons.map((lesson) => ({ ...lesson, week: week.week })))
+  const TOTAL_LESSONS = ALL_LESSONS.length
+
   const [mounted, setMounted] = useState(false)
   const [authenticated, setAuthenticated] = useState(initialAuthenticated)
   const [emailInput, setEmailInput] = useState('')
   const [codeInput, setCodeInput] = useState('')
   const [loginError, setLoginError] = useState('')
   const [loggingIn, setLoggingIn] = useState(false)
-  const [activeLessonId, setActiveLessonId] = useState('1-1')
+  const [activeLessonId, setActiveLessonId] = useState(track === 'licensed' ? '2-1' : '1-1')
   const [completedLessons, setCompletedLessons] = useState<string[]>([])
-  const [expandedWeeks, setExpandedWeeks] = useState<number[]>([1])
+  const [expandedWeeks, setExpandedWeeks] = useState<number[]>(track === 'licensed' ? [2] : [1])
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -275,7 +282,7 @@ export default function CourseApp({ authenticated: initialAuthenticated }: { aut
           </form>
           <p className="mt-6 text-center text-xs text-gray-400">
             Haven't purchased yet?{' '}
-            <a href="/moving-broker-training" className="text-[#228B4A]">View the program →</a>
+            <a href="/" className="text-[#228B4A]">View the program →</a>
           </p>
           <p className="mt-2 text-center text-xs text-gray-400">
             Need help? Email{' '}
@@ -311,9 +318,11 @@ export default function CourseApp({ authenticated: initialAuthenticated }: { aut
         </div>
 
         <div className="hidden lg:flex flex-col items-center text-center flex-1 min-w-0 px-2">
-          <h1 className="text-base font-bold text-[#0B1F3A] truncate w-full">HHG Moving Broker Launch Program</h1>
+          <h1 className="text-base font-bold text-[#0B1F3A] truncate w-full">
+            {track === 'licensed' ? 'HHG Moving Broker Operations Track' : 'HHG Moving Broker Launch Program'}
+          </h1>
           <p className="text-xs text-gray-500 truncate w-full">
-            7-Week Complete Course — {TOTAL_LESSONS} Lessons · Instructor: Erica Dorsey
+            {track === 'licensed' ? '6-Week Operations Track' : '7-Week Complete Course'} — {TOTAL_LESSONS} Lessons · Instructor: Erica Dorsey
           </p>
         </div>
 
@@ -369,7 +378,7 @@ export default function CourseApp({ authenticated: initialAuthenticated }: { aut
           </div>
 
           <nav>
-            {COURSE.map((week) => {
+            {visibleCourse.map((week) => {
               const expanded = expandedWeeks.includes(week.week)
               return (
                 <div key={week.week} className="border-b border-gray-100">
