@@ -18,6 +18,13 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'can-an-hhg-broker-work-from-home',
+    title: "Can an HHG Broker Work From Home? Yes — Here's How",
+    excerpt:
+      'No FMCSA requirement for a commercial office. Here is what your home-based brokerage actually needs to run — equipment, business address rules, and daily operations.',
+    tag: 'Operations',
+  },
+  {
     slug: 'how-to-start-an-hhg-brokerage-in-2026',
     title: 'How to Start an HHG Brokerage in 2026: Full FMCSA Guide',
     excerpt:

@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "Can an HHG Broker Work From Home? Yes — Here's How",
+    link: "https://brokerfilings.com/blog/can-an-hhg-broker-work-from-home",
+    description: "Can an HHG broker work from home? Yes. Here's what the FMCSA actually requires, what equipment you need, and how a home-based brokerage really runs.",
+    date: "Mon, 15 Jun 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/can-an-hhg-broker-work-from-home",
+  },
+  {
     title: "How to Start an HHG Brokerage in 2026: Full FMCSA Guide",
     link: "https://brokerfilings.com/blog/how-to-start-an-hhg-brokerage-in-2026",
     description: "Learn how to start an HHG brokerage in 2026 — LLC, EIN, OP-1, surety bond, BOC-3. Real costs, real timeline, built by someone who did it first.",
