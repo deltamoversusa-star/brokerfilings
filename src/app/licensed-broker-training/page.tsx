@@ -24,7 +24,7 @@ export default function LicensedBrokerTrainingPage() {
         <div className="trust-bar-inner">
           <div className="trust-item"><span className="trust-icon">✓</span> For Brokers Who Already Hold FMCSA Authority</div>
           <div className="trust-item"><span className="trust-icon">✓</span> Skip Licensing — Start at Operations</div>
-          <div className="trust-item"><span className="trust-icon">✓</span> 35 Lessons · Weeks 2–7</div>
+          <div className="trust-item"><span className="trust-icon">✓</span> 36 Lessons · Weeks 2–7</div>
           <div className="trust-item"><span className="trust-icon">✓</span> Taught by a 10-Year HHG Broker</div>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default function LicensedBrokerTrainingPage() {
                 <div className="hero-stat-label">Weeks of operations training</div>
               </div>
               <div className="hero-stat">
-                <div className="hero-stat-num">35</div>
+                <div className="hero-stat-num">36</div>
                 <div className="hero-stat-label">Lessons, start to scale</div>
               </div>
               <div className="hero-stat">
@@ -173,9 +173,10 @@ export default function LicensedBrokerTrainingPage() {
               <div className="include-desc">
                 The passive-income carrier model, using a pre-loaded carrier database,
                 the carrier call script with objection handling, a live call demo,
-                vetting through SAFER and safety scores, and setting carrier rates.
+                vetting through SAFER and safety scores, onboarding carriers via
+                agreement and Stripe Connect, and setting carrier rates.
               </div>
-              <div className="include-tag">7 lessons</div>
+              <div className="include-tag">8 lessons</div>
             </div>
             <div className="include-item">
               <div className="include-icon">📋</div>
@@ -252,7 +253,7 @@ export default function LicensedBrokerTrainingPage() {
                 { number: '$200K', label: 'First Moving Season' },
                 { number: '10',   label: 'Years in HHG Industry' },
                 { number: '1',    label: 'Carrier to Start' },
-                { number: '35',   label: 'Operations Lessons' },
+                { number: '36',   label: 'Operations Lessons' },
               ].map(({ number, label }) => (
                 <div key={label} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(201,168,76,0.12)', padding: '32px 24px', textAlign: 'center' }}>
                   <div style={{ fontSize: '36px', fontWeight: 900, color: '#C9A84C', fontFamily: 'var(--font-playfair)', lineHeight: 1, marginBottom: '8px' }}>{number}</div>
@@ -313,7 +314,7 @@ export default function LicensedBrokerTrainingPage() {
               <div className="faq-a">
                 All six operations weeks — platform setup, carrier network, customer
                 operations, payments and compliance, leads and marketing, and realtor
-                network and scaling — for a total of 35 video lessons you can work
+                network and scaling — for a total of 36 video lessons you can work
                 through at your own pace.
               </div>
             </div>
@@ -374,7 +375,7 @@ export default function LicensedBrokerTrainingPage() {
             Get the Operations Course — $497
           </a>
           <div className="cta-guarantee">
-            One-time payment · Lifetime access · 35 lessons across 6 weeks
+            One-time payment · Lifetime access · 36 lessons across 6 weeks
           </div>
         </div>
       </div>

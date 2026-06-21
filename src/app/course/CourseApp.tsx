@@ -4,10 +4,18 @@ import { useEffect, useState } from 'react'
 
 const PROGRESS_KEY = 'bf_course_progress'
 
+// ─── Video host config ───────────────────────────────────────────
+// To switch video hosts later (e.g. Cloudflare Stream), change ONLY
+// this base URL and update each lesson's `videoId`. Nothing else.
+// Bunny embed format: https://iframe.mediadelivery.net/embed/{LIBRARY_ID}/{videoId}
+const VIDEO_EMBED_BASE = 'https://iframe.mediadelivery.net/embed/688170'
+
 interface Lesson {
   id: string
   number: string
   title: string
+  videoId: string
+  liveDemo?: boolean
 }
 
 interface Week {
@@ -21,84 +29,85 @@ const COURSE: Week[] = [
     week: 1,
     title: 'Licensing + Setup',
     lessons: [
-      { id: '1-1', number: '1.1', title: 'What Is a Moving Broker? — Industry Structure + Income Model' },
-      { id: '1-2', number: '1.2', title: 'Brokers vs. Carriers — Roles, Liability, and How Money Flows' },
-      { id: '1-3', number: '1.3', title: "What FMCSA Authority Means — and Why It's Required" },
-      { id: '1-4', number: '1.4', title: 'Filing Your FMCSA Application — Step by Step' },
-      { id: '1-4b', number: '1.4B', title: 'Identity Verification — Authorization and Secure Intake' },
-      { id: '1-5', number: '1.5', title: 'The $75,000 Surety Bond — What You Actually Pay' },
-      { id: '1-6', number: '1.6', title: 'Business Bank Account Setup + Bond Activation' },
+      { id: '1-1', number: '1.1', title: 'What Is a Moving Broker? — Industry Structure + Income Model', videoId: '3212865b-581a-4a38-89b8-5a416d110ce4' },
+      { id: '1-2', number: '1.2', title: 'Brokers vs. Carriers — Roles, Liability, and How Money Flows', videoId: '4480e42f-29d6-4c99-bffa-88b2cb21a1bc' },
+      { id: '1-3', number: '1.3', title: "What FMCSA Authority Means — and Why It's Required", videoId: 'c4089e8a-9207-4b90-a789-a8bc1c55ba93' },
+      { id: '1-4', number: '1.4', title: 'Filing Your FMCSA Application — Step by Step', videoId: 'a435c376-d774-479d-8ef6-121fd1704964' },
+      { id: '1-4b', number: '1.4B', title: 'Identity Verification — Authorization and Secure Intake', videoId: '5d165302-2cd8-42fd-b3f4-88250fe778e1' },
+      { id: '1-5', number: '1.5', title: 'The $75,000 Surety Bond — What You Actually Pay', videoId: '3daa836e-d78a-4df8-bcad-1cd1fc2283ce' },
+      { id: '1-6', number: '1.6', title: 'Business Bank Account Setup + Bond Activation', videoId: '1170afd6-f887-4b97-9104-4b076fa9659e' },
     ],
   },
   {
     week: 2,
     title: 'Platform Setup',
     lessons: [
-      { id: '2-1', number: '2.1', title: 'Why Platform Choice Matters — What to Look For in a Broker OS' },
-      { id: '2-2', number: '2.2', title: 'MagickPlat Account Setup + Brokerage Profile' },
-      { id: '2-3', number: '2.3', title: 'Connecting Stripe — Collecting and Holding Payments' },
-      { id: '2-4', number: '2.4', title: 'Dashboard Orientation — CRM, Network Builder, Payments' },
-      { id: '2-5', number: '2.5', title: 'Setting Your Service Area and Pricing Defaults' },
+      { id: '2-1', number: '2.1', title: 'Why Platform Choice Matters — What to Look For in a Broker OS', videoId: 'c15f725c-43d8-4dff-b06d-03a0c75f518a' },
+      { id: '2-2', number: '2.2', title: 'MagickPlat Account Setup + Brokerage Profile', videoId: '015ea158-d3e0-4a47-9297-bb26987917f4', liveDemo: true },
+      { id: '2-3', number: '2.3', title: 'Connecting Stripe — Collecting and Holding Payments', videoId: '1cbe239d-34a1-48ba-b8a9-52977a0c0b8c', liveDemo: true },
+      { id: '2-4', number: '2.4', title: 'Dashboard Orientation — CRM, Network Builder, Payments', videoId: '27c5426a-f038-43d1-9b64-1e2703a1b951', liveDemo: true },
+      { id: '2-5', number: '2.5', title: 'Setting Your Service Area and Pricing Defaults', videoId: '57c56c48-44a9-4e22-aee5-728d981d3fd0', liveDemo: true },
     ],
   },
   {
     week: 3,
     title: 'Carrier Network',
     lessons: [
-      { id: '3-1', number: '3.1', title: 'How the Carrier Passive Income Model Works' },
-      { id: '3-2', number: '3.2', title: 'Using the Pre-Loaded Carrier Database in MagickPlat' },
-      { id: '3-3', number: '3.3', title: 'The Carrier Call Script — Opening, Pitch, Objection Handling' },
-      { id: '3-4', number: '3.4', title: 'Live Call Demo — Watching a Real Carrier Conversation' },
-      { id: '3-5', number: '3.5', title: 'Logging Calls, Sending Follow-Ups — Tracking Your Pipeline' },
-      { id: '3-6', number: '3.6', title: 'Vetting Carriers — SAFER Database, Safety Scores, Insurance' },
-      { id: '3-7', number: '3.7', title: 'Setting Carrier Rates in the Job Info Tab' },
+      { id: '3-1', number: '3.1', title: 'How the Carrier Passive Income Model Works', videoId: '20a8b0cc-dac2-4c1e-bcc0-010a6edc0c62' },
+      { id: '3-2', number: '3.2', title: 'Using the Pre-Loaded Carrier Database in MagickPlat', videoId: 'ab3e4091-3263-41f2-b429-1f97a2529f1c', liveDemo: true },
+      { id: '3-3', number: '3.3', title: 'The Carrier Call Script — Opening, Pitch, Objection Handling', videoId: 'ab775f2d-f7ff-4b77-a027-616bf213606f' },
+      { id: '3-4', number: '3.4', title: 'Live Call Demo — Watching a Real Carrier Conversation', videoId: '93dd5f5f-83e9-4a1f-8976-b649adc01336' },
+      { id: '3-5', number: '3.5', title: 'Logging Calls, Sending Follow-Ups — Tracking Your Pipeline', videoId: 'a9b9de15-8230-41bb-80c5-602e23bbc7d4', liveDemo: true },
+      { id: '3-6', number: '3.6', title: 'Vetting Carriers — SAFER Database, Safety Scores, Insurance', videoId: '13f0f3b2-101e-4d9a-a74e-d2f5948d85d7' },
+      { id: '3-6b', number: '3.6B', title: 'Onboarding a Carrier — Agreement, Stripe Connect & the Carrier Portal', videoId: 'b63df97c-f87a-4187-af74-8616eaa36c7f', liveDemo: true },
+      { id: '3-7', number: '3.7', title: 'Setting Carrier Rates in the Job Info Tab', videoId: '15d7875d-1115-4b3b-ac21-35ffa1c687ca' },
     ],
   },
   {
     week: 4,
     title: 'Customer Operations',
     lessons: [
-      { id: '4-1', number: '4.1', title: 'The Customer Journey — From First Call to Move Day' },
-      { id: '4-2', number: '4.2', title: 'Creating a Lead in the CRM Pipeline' },
-      { id: '4-3', number: '4.3', title: 'Quoting a Local Move — Hourly Rate, Labor, Drive Time' },
-      { id: '4-4', number: '4.4', title: 'Quoting a Long-Distance Move — Cubic Foot Method + Inventory' },
-      { id: '4-5', number: '4.5', title: 'Required Customer Disclosures — FMCSA Compliance' },
-      { id: '4-6', number: '4.6', title: 'Dispatching the Job — Carrier Assignment and Confirmation' },
+      { id: '4-1', number: '4.1', title: 'The Customer Journey — From First Call to Move Day', videoId: '0a1647a3-4f76-4ec8-8a21-93c98985903e' },
+      { id: '4-2', number: '4.2', title: 'Creating a Lead in the CRM Pipeline', videoId: '2f2baa6f-37d2-4388-85b6-50b9ae472861', liveDemo: true },
+      { id: '4-3', number: '4.3', title: 'Quoting a Local Move — Hourly Rate, Labor, Drive Time', videoId: '696cfebd-87cd-4efb-9666-469a4d96d85d', liveDemo: true },
+      { id: '4-4', number: '4.4', title: 'Quoting a Long-Distance Move — Cubic Foot Method + Inventory', videoId: '48959a6d-30f9-4771-bc94-6b7fcacf7cf9', liveDemo: true },
+      { id: '4-5', number: '4.5', title: 'Required Customer Disclosures — FMCSA Compliance', videoId: '5834c7ed-f167-4dd2-aeb5-e4c0d3c05395' },
+      { id: '4-6', number: '4.6', title: 'Dispatching the Job — Carrier Assignment and Confirmation', videoId: '179e5044-e4e7-43e3-bd2c-6335dda80b87', liveDemo: true },
     ],
   },
   {
     week: 5,
     title: 'Payments + Compliance',
     lessons: [
-      { id: '5-1', number: '5.1', title: 'How the MagickPlat Escrow System Works' },
-      { id: '5-2', number: '5.2', title: 'Generating Stripe Payment Links for Every Job' },
-      { id: '5-3', number: '5.3', title: 'Chargeback Prevention — What to Do Before and After a Move' },
-      { id: '5-4', number: '5.4', title: 'Carrier Payouts — How Automatic Weekly Payments Work' },
-      { id: '5-5', number: '5.5', title: 'Handling Disputes — Broker Responsibilities and Process' },
-      { id: '5-6', number: '5.6', title: 'Compliance in Operations — Records, Disclosures, Audits' },
+      { id: '5-1', number: '5.1', title: 'How the MagickPlat Escrow System Works', videoId: 'bcee0008-da4e-49aa-ba81-e3b1b75e50e5', liveDemo: true },
+      { id: '5-2', number: '5.2', title: 'Generating Stripe Payment Links for Every Job', videoId: '2b08e79a-b260-4953-9f15-c8f2e5b70e0b', liveDemo: true },
+      { id: '5-3', number: '5.3', title: 'Chargeback Prevention — What to Do Before and After a Move', videoId: '036a9c1b-71eb-4458-ab32-1fe1f1195172' },
+      { id: '5-4', number: '5.4', title: 'Carrier Payouts — How Automatic Weekly Payments Work', videoId: 'c9ed5b57-ac25-4c17-8bb5-49f9cc955b0a', liveDemo: true },
+      { id: '5-5', number: '5.5', title: 'Handling Disputes — Broker Responsibilities and Process', videoId: '66a33006-9c6e-49d5-8b91-aad65daedcf8' },
+      { id: '5-6', number: '5.6', title: 'Compliance in Operations — Records, Disclosures, Audits', videoId: '3cc3827c-d31a-41d1-9d1c-dc5c26b96941' },
     ],
   },
   {
     week: 6,
     title: 'Leads + Marketing',
     lessons: [
-      { id: '6-1', number: '6.1', title: 'Your Lead Engine — How Moving Brokers Get Customers' },
-      { id: '6-2', number: '6.2', title: 'Why Digital Presence Is Your First Credibility Signal' },
-      { id: '6-3', number: '6.3', title: 'Ad Booster — Your AI-Powered Lead Generation System' },
-      { id: '6-4', number: '6.4', title: 'Realtor Referrals — Introduction to the Partnership Model' },
-      { id: '6-5', number: '6.5', title: 'Realtor Referrals — The Pitch, The Setup, The Long Game' },
+      { id: '6-1', number: '6.1', title: 'Your Lead Engine — How Moving Brokers Get Customers', videoId: '020b9d5a-00fb-4474-bdc0-352e099e4f17' },
+      { id: '6-2', number: '6.2', title: 'Why Digital Presence Is Your First Credibility Signal', videoId: 'fd46e54d-6b00-4caf-90f1-a40c7ca12b82' },
+      { id: '6-3', number: '6.3', title: 'Ad Booster — Your AI-Powered Lead Generation System', videoId: 'ee2fe198-742a-41c5-8ab9-c44d19d0ee39' },
+      { id: '6-4', number: '6.4', title: 'Realtor Referrals — Introduction to the Partnership Model', videoId: '371ae254-2776-4637-8e63-4da6ba650c43' },
+      { id: '6-5', number: '6.5', title: 'Realtor Referrals — The Pitch, The Setup, The Long Game', videoId: '28d403c2-fe15-4f46-8513-a9df6284e253' },
     ],
   },
   {
     week: 7,
     title: 'Realtor Network + Scaling',
     lessons: [
-      { id: '7-1', number: '7.1', title: 'Why Realtors Are the Best Lead Source for Moving Brokers' },
-      { id: '7-2', number: '7.2', title: 'The Realtor Database in MagickPlat' },
-      { id: '7-3', number: '7.3', title: 'How Automatic Realtor Commission Payments Work' },
-      { id: '7-4', number: '7.4', title: 'Setting Up Realtor Accounts and Commission Structures' },
-      { id: '7-5', number: '7.5', title: 'Building Reporting and Tracking Your Growth' },
-      { id: '7-6', number: '7.6', title: 'Your 90-Day Plan — Authority Live, First 10 Jobs, Scale' },
+      { id: '7-1', number: '7.1', title: 'Why Realtors Are the Best Lead Source for Moving Brokers', videoId: '2de87ac1-5b6a-43ff-a112-de216006e722' },
+      { id: '7-2', number: '7.2', title: 'The Realtor Database in MagickPlat', videoId: '7798f92e-171b-4cc7-9d34-a5d3d09ee63a', liveDemo: true },
+      { id: '7-3', number: '7.3', title: 'How Automatic Realtor Commission Payments Work', videoId: '06a430c0-1d34-455e-ad03-99daa98724c8', liveDemo: true },
+      { id: '7-4', number: '7.4', title: 'Setting Up Realtor Accounts and Commission Structures', videoId: '3919d051-5dc1-448e-b240-fa39b959541f', liveDemo: true },
+      { id: '7-5', number: '7.5', title: 'Building Reporting and Tracking Your Growth', videoId: 'e0529a8a-0314-4b1c-9999-3b0627d1fbc6' },
+      { id: '7-6', number: '7.6', title: 'Your 90-Day Plan — Authority Live, First 10 Jobs, Scale', videoId: '74e88bab-b6a5-490f-b692-ee6821b09287' },
     ],
   },
 ]
@@ -169,6 +178,7 @@ export default function CourseApp({
   const [completedLessons, setCompletedLessons] = useState<string[]>([])
   const [expandedWeeks, setExpandedWeeks] = useState<number[]>([visibleCourse[0]?.week ?? 1])
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [dismissedDisclaimers, setDismissedDisclaimers] = useState<string[]>([])
 
   useEffect(() => {
     const storedProgress = localStorage.getItem(PROGRESS_KEY)
@@ -441,15 +451,45 @@ export default function CourseApp({
 
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B1F3A] mb-5">{activeLesson.title}</h2>
 
+            {activeLesson.liveDemo && !dismissedDisclaimers.includes(activeLesson.id) && (
+              <div className="relative mb-4">
+                <img
+                  src="/week-cards/disclaimer.png"
+                  alt="Demo Walkthrough — no real transactions"
+                  className="w-full rounded-lg shadow-sm"
+                />
+                <button
+                  type="button"
+                  onClick={() => setDismissedDisclaimers((prev) => [...prev, activeLesson.id])}
+                  className="absolute top-2 right-2 bg-black/60 hover:bg-black/80 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none"
+                  aria-label="Dismiss notice"
+                >
+                  ×
+                </button>
+              </div>
+            )}
+
+            <img
+              src={`/week-cards/week-${activeLesson.week}.png`}
+              alt={`Week ${activeLesson.week}`}
+              className="w-full rounded-lg mb-5 shadow-sm"
+            />
+
             <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden shadow-md">
-              <iframe
-                key={activeLesson.id}
-                src="https://player.vimeo.com/video/PLACEHOLDER"
-                className="absolute inset-0 w-full h-full"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title={activeLesson.title}
-              />
+              {activeLesson.videoId ? (
+                <iframe
+                  key={activeLesson.id}
+                  src={`${VIDEO_EMBED_BASE}/${activeLesson.videoId}`}
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title={activeLesson.title}
+                />
+              ) : (
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center text-white/60 text-sm">
+                  Video coming soon
+                </div>
+              )}
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-3">

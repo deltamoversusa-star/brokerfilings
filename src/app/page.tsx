@@ -90,6 +90,10 @@ export default function HomePage() {
               <div className="pricing-check">✓</div>
               <span>FMCSA Follow-Up Until Approved</span>
             </div>
+            <div className="pricing-item">
+              <div className="pricing-check">✓</div>
+              <span>Full 7-Week Launch Program — all 43 lessons included</span>
+            </div>
 
             <div className="pricing-note">
               All government filing fees are included in the $1,799 price. No hidden costs.
@@ -200,6 +204,16 @@ export default function HomePage() {
                 until your authority is granted. Average approval time is 4–6 weeks.
               </div>
               <div className="include-tag">Until approved</div>
+            </div>
+            <div className="include-item">
+              <div className="include-icon">🎓</div>
+              <div className="include-title">7-Week Launch Program</div>
+              <div className="include-desc">
+                The complete Moving Broker Launch Program — 43 video lessons across 7 weeks
+                covering platform setup, carrier network, quoting, payments, marketing, and
+                your 90-day plan. Included free with your filing package, accessed at /course.
+              </div>
+              <div className="include-tag">43 lessons included</div>
             </div>
           </div>
         </div>
