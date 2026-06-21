@@ -153,8 +153,10 @@ function CloseIcon() {
 export default function CourseApp({ authenticated: initialAuthenticated }: { authenticated: boolean }) {
   const [mounted, setMounted] = useState(false)
   const [authenticated, setAuthenticated] = useState(initialAuthenticated)
-  const [passwordInput, setPasswordInput] = useState('')
+  const [emailInput, setEmailInput] = useState('')
+  const [codeInput, setCodeInput] = useState('')
   const [loginError, setLoginError] = useState('')
+  const [loggingIn, setLoggingIn] = useState(false)
   const [activeLessonId, setActiveLessonId] = useState('1-1')
   const [completedLessons, setCompletedLessons] = useState<string[]>([])
   const [expandedWeeks, setExpandedWeeks] = useState<number[]>([1])
@@ -176,29 +178,35 @@ export default function CourseApp({ authenticated: initialAuthenticated }: { aut
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
     setLoginError('')
+    setLoggingIn(true)
     try {
-      const res = await fetch('/api/course-auth', {
+      const res = await fetch('/api/course-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: passwordInput }),
+        body: JSON.stringify({ email: emailInput, accessCode: codeInput }),
       })
       if (res.ok) {
         setAuthenticated(true)
-        setPasswordInput('')
+        setEmailInput('')
+        setCodeInput('')
       } else {
-        setLoginError('Incorrect password. Please try again.')
+        const data = await res.json().catch(() => ({}))
+        setLoginError(data.error || 'Incorrect email or access code.')
       }
     } catch {
       setLoginError('Something went wrong. Please try again.')
+    } finally {
+      setLoggingIn(false)
     }
   }
 
   async function handleLogout() {
-    await fetch('/api/course-auth', { method: 'DELETE' })
+    await fetch('/api/course-login', { method: 'DELETE' })
     localStorage.removeItem(PROGRESS_KEY)
     setAuthenticated(false)
     setCompletedLessons([])
-    setPasswordInput('')
+    setEmailInput('')
+    setCodeInput('')
   }
 
   function toggleComplete(lessonId: string) {
@@ -235,26 +243,43 @@ export default function CourseApp({ authenticated: initialAuthenticated }: { aut
             <div className="mt-1 text-sm text-gray-500">Course Portal</div>
           </div>
           <h1 className="text-lg font-bold text-[#0B1F3A] text-center mb-1">HHG Moving Broker Launch Program</h1>
-          <p className="text-sm text-gray-500 text-center mb-6">Enter your course password to continue</p>
+          <p className="text-sm text-gray-500 text-center mb-6">
+            Enter the email you purchased with, and the access code we emailed you.
+          </p>
           <form onSubmit={handleLogin} className="space-y-3">
             <input
-              type="password"
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
-              placeholder="Password"
+              type="email"
+              value={emailInput}
+              onChange={(e) => setEmailInput(e.target.value)}
+              placeholder="Email address"
               autoFocus
+              required
               className="w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#228B4A] focus:border-[#228B4A]"
+            />
+            <input
+              type="text"
+              value={codeInput}
+              onChange={(e) => setCodeInput(e.target.value.toUpperCase())}
+              placeholder="Access code"
+              required
+              className="w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm tracking-widest focus:outline-none focus:ring-2 focus:ring-[#228B4A] focus:border-[#228B4A]"
             />
             {loginError && <p className="text-sm text-red-600">{loginError}</p>}
             <button
               type="submit"
-              className="w-full bg-[#228B4A] text-white font-semibold rounded-md py-2.5 hover:bg-[#1B6B3A] transition-colors"
+              disabled={loggingIn}
+              className="w-full bg-[#228B4A] text-white font-semibold rounded-md py-2.5 hover:bg-[#1B6B3A] transition-colors disabled:opacity-60"
             >
-              Access Course
+              {loggingIn ? 'Checking…' : 'Access Course'}
             </button>
           </form>
           <p className="mt-6 text-center text-xs text-gray-400">
-            Need access? Email <a href="mailto:support@brokerfilings.com" className="text-[#228B4A]">support@brokerfilings.com</a>
+            Haven't purchased yet?{' '}
+            <a href="/moving-broker-training" className="text-[#228B4A]">View the program →</a>
+          </p>
+          <p className="mt-2 text-center text-xs text-gray-400">
+            Need help? Email{' '}
+            <a href="mailto:support@brokerfilings.com" className="text-[#228B4A]">support@brokerfilings.com</a>
           </p>
         </div>
       </div>

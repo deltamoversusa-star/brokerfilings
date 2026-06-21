@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
+import { verifySessionToken } from '@/lib/courseSession'
 import CourseApp from './CourseApp'
 
 export const metadata: Metadata = {
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
 
 export default async function CoursePage() {
   const cookieStore = await cookies()
-  const authenticated = cookieStore.get('bf_course_session')?.value === '1'
+  const token = cookieStore.get('bf_course_session')?.value
+  const email = verifySessionToken(token)
 
-  return <CourseApp authenticated={authenticated} />
+  return <CourseApp authenticated={!!email} />
 }
