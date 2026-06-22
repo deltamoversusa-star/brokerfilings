@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 
 const PROGRESS_KEY = 'bf_course_progress'
+const GRADUATE_NAME_KEY = 'bf_course_graduate_name'
+const PROGRAM_NAME = 'Moving Broker Launch Program'
 
 // ─── Video host config ───────────────────────────────────────────
 // To switch video hosts later (e.g. Cloudflare Stream), change ONLY
@@ -510,6 +512,15 @@ export default function CourseApp({
               Having trouble? Email{' '}
               <a href="mailto:support@brokerfilings.com" className="text-[#228B4A] underline">
                 support@brokerfilings.com
+              </a>
+              {' '}·{' '}
+              <a
+                href="https://www.facebook.com/groups/1664088118074551"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#228B4A] underline"
+              >
+                Join our HHG Facebook Community
               </a>
             </p>
 
