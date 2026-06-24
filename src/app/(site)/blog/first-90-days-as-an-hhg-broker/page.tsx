@@ -62,9 +62,9 @@ export default function First90DaysAsAnHhgBroker() {
 
           <h2>Days 31–60: Turn On Lead Sources and Book Your First Jobs</h2>
 
-          <p>With a working carrier network in place, month two shifts to generating actual customer inquiries. Two channels consistently outperform others for new HHG brokers: Google Local Service Ads and realtor referral relationships.</p>
+          <p>With a working carrier network in place, month two shifts to generating actual customer inquiries. Two channels consistently outperform others for new HHG brokers: service ads and realtor referral relationships.</p>
 
-          <p> Service Ads work on a pay-per-lead model rather than pay-per-click, which means you're not paying for browsing — you're paying for someone who explicitly requested a moving quote. Budget expectations vary by market, but new brokers typically see workable lead volume starting around $300 to $600 per month in ad spend, scaling up as conversion data improves.</p>
+          <p>Service ads work on a pay-per-lead model rather than pay-per-click, which means you're not paying for browsing — you're paying for someone who explicitly requested a moving quote. Budget expectations vary by market, but new brokers typically see workable lead volume starting around $300 to $600 per month in ad spend, scaling up as conversion data improves.</p>
 
           <p>Realtor referrals work differently — they're relationship-built, not ad-spend-built, which means slower to start but cheaper per lead once established. A realtor whose clients are buying or selling homes is a direct pipeline to people who are about to move. Ten realtor relationships generating two to three referrals each per month is a sustainable lead source that costs nothing per lead beyond the relationship-building itself.</p>
 
@@ -79,7 +79,7 @@ export default function First90DaysAsAnHhgBroker() {
               </thead>
               <tbody>
                 {[
-                  ["Google Local Service Ads", "1–2 weeks to first leads", "$300–$600/mo to start"],
+                  ["Service ads", "1–2 weeks to first leads", "$300–$600/mo to start"],
                   ["Realtor referral network", "30–60 days to first referral", "Relationship cost only"],
                   ["Direct customer outreach", "Immediate", "Time investment only"],
                 ].map((row, i) => (
