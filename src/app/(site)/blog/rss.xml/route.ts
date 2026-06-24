@@ -2,6 +2,20 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "First 90 Days as an HHG Broker: What to Actually Do",
+    link: "https://brokerfilings.com/blog/first-90-days-as-an-hhg-broker",
+    description: "Your first 90 days as an HHG broker determine everything that follows. Here's the carrier, lead, and dispatch sequence that actually produces income.",
+    date: "Thu, 18 Jun 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/first-90-days-as-an-hhg-broker",
+  },
+  {
+    title: "Start a Moving Business Without Trucks: The Broker Model",
+    link: "https://brokerfilings.com/blog/start-a-moving-business-without-trucks",
+    description: "You can start a moving business without trucks by becoming a licensed HHG broker. No fleet, no drivers — here's how the model actually works and what it costs.",
+    date: "Mon, 22 Jun 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/start-a-moving-business-without-trucks",
+  },
+  {
     title: "Can an HHG Broker Work From Home? Yes — Here's How",
     link: "https://brokerfilings.com/blog/can-an-hhg-broker-work-from-home",
     description: "Can an HHG broker work from home? Yes. Here's what the FMCSA actually requires, what equipment you need, and how a home-based brokerage really runs.",

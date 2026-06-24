@@ -18,6 +18,20 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'first-90-days-as-an-hhg-broker',
+    title: 'First 90 Days as an HHG Broker: What to Actually Do',
+    excerpt:
+      'Your first 90 days determine almost everything that follows. The carrier, lead, and dispatch sequence that actually produces income, broken into three 30-day phases.',
+    tag: 'Operations',
+  },
+  {
+    slug: 'start-a-moving-business-without-trucks',
+    title: 'Start a Moving Business Without Trucks: The Broker Model',
+    excerpt:
+      'You can start a moving business without trucks, drivers, or fleet costs. Here is how HHG brokerage actually works, what it costs, and where the carriers come from.',
+    tag: 'Getting Started',
+  },
+  {
     slug: 'can-an-hhg-broker-work-from-home',
     title: "Can an HHG Broker Work From Home? Yes — Here's How",
     excerpt:
