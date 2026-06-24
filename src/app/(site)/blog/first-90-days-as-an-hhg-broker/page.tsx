@@ -64,7 +64,7 @@ export default function First90DaysAsAnHhgBroker() {
 
           <p>With a working carrier network in place, month two shifts to generating actual customer inquiries. Two channels consistently outperform others for new HHG brokers: Google Local Service Ads and realtor referral relationships.</p>
 
-          <p>Google Local Service Ads work on a pay-per-lead model rather than pay-per-click, which means you're not paying for browsing — you're paying for someone who explicitly requested a moving quote. Budget expectations vary by market, but new brokers typically see workable lead volume starting around $300 to $600 per month in ad spend, scaling up as conversion data improves.</p>
+          <p> Service Ads work on a pay-per-lead model rather than pay-per-click, which means you're not paying for browsing — you're paying for someone who explicitly requested a moving quote. Budget expectations vary by market, but new brokers typically see workable lead volume starting around $300 to $600 per month in ad spend, scaling up as conversion data improves.</p>
 
           <p>Realtor referrals work differently — they're relationship-built, not ad-spend-built, which means slower to start but cheaper per lead once established. A realtor whose clients are buying or selling homes is a direct pipeline to people who are about to move. Ten realtor relationships generating two to three referrals each per month is a sustainable lead source that costs nothing per lead beyond the relationship-building itself.</p>
 
