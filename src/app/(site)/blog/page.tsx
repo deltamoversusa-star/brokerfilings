@@ -18,6 +18,13 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'moving-broker-income',
+    title: 'Moving Broker Income: What You Can Realistically Earn',
+    excerpt:
+      'Real income breakdowns for licensed HHG moving brokers — dispatch margins, carrier subscription fees, seasonal patterns, and what separates high earners from average ones.',
+    tag: 'Income & Business Model',
+  },
+  {
     slug: 'first-90-days-as-an-hhg-broker',
     title: 'First 90 Days as an HHG Broker: What to Actually Do',
     excerpt:

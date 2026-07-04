@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "Moving Broker Income: What You Can Realistically Earn",
+    link: "https://brokerfilings.com/blog/moving-broker-income",
+    description: "How much do moving brokers actually make? Real income breakdowns — dispatch margins, carrier subscriptions, and what drives monthly earnings up or down.",
+    date: "Mon, 09 Jun 2025 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/moving-broker-income",
+  },
+  {
     title: "First 90 Days as an HHG Broker: What to Actually Do",
     link: "https://brokerfilings.com/blog/first-90-days-as-an-hhg-broker",
     description: "Your first 90 days as an HHG broker determine everything that follows. Here's the carrier, lead, and dispatch sequence that actually produces income.",
