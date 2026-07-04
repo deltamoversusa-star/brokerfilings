@@ -2,6 +2,13 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "Passive Income From Moving Referrals: The HHG Broker Model",
+    link: "https://brokerfilings.com/blog/passive-income-from-moving-referrals",
+    description: "Passive income from moving referrals is real — but it requires a federal license first. Here's how carrier subscriptions and realtor networks create recurring income.",
+    date: "Sat, 04 Jul 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/passive-income-from-moving-referrals",
+  },
+  {
     title: "Moving Broker Income: What You Can Realistically Earn",
     link: "https://brokerfilings.com/blog/moving-broker-income",
     description: "How much do moving brokers actually make? Real income breakdowns — dispatch margins, carrier subscriptions, and what drives monthly earnings up or down.",

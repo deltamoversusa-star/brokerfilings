@@ -3,6 +3,7 @@ import type { MetadataRoute } from 'next'
 const BASE_URL = 'https://brokerfilings.com'
 
 const blogPosts = [
+  'passive-income-from-moving-referrals',
   'moving-broker-income',
   'start-a-moving-business-without-trucks',
   'first-90-days-as-an-hhg-broker',

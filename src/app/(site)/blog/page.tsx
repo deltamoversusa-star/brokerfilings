@@ -18,6 +18,13 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'passive-income-from-moving-referrals',
+    title: 'Passive Income From Moving Referrals: The HHG Broker Model',
+    excerpt:
+      'Carrier subscriptions and realtor referral networks create two recurring income streams in HHG brokerage. Here is how both work and what they produce at realistic scale.',
+    tag: 'Income & Business Model',
+  },
+  {
     slug: 'moving-broker-income',
     title: 'Moving Broker Income: What You Can Realistically Earn',
     excerpt:
