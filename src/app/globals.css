@@ -823,6 +823,22 @@ footer {
   color: #ff7070;
 }
 
+/* CONTACT FORM */
+.contact-input {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--gray-lt);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--navy);
+  outline: none;
+  box-sizing: border-box;
+  font-family: var(--font-source-sans), sans-serif;
+}
+
+.contact-input:focus { border-color: var(--green2); }
+
 /* BLOG */
 .blog-grid {
   display: grid;
