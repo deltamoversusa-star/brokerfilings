@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/licensed-broker-training', label: 'Broker Course' },
   { href: '/blog', label: 'Blog' },
   { href: '/our-story', label: 'Our Story' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Header() {
