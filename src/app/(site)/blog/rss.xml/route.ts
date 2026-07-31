@@ -2,6 +2,20 @@ import { NextResponse } from "next/server";
 
 const posts = [
   {
+    title: "Moving Broker Leads: How to Get Them and What They Actually Cost",
+    link: "https://brokerfilings.com/blog/moving-broker-leads",
+    description: "Moving broker leads come from paid ads, referrals, SEO, and lead vendors. Here's what each channel costs, what converts, and which ones licensed brokers should prioritize.",
+    date: "Mon, 13 Jul 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/moving-broker-leads",
+  },
+  {
+    title: "How Moving Brokers Find and Sign Carriers — The Real Process",
+    link: "https://brokerfilings.com/blog/how-moving-brokers-find-and-sign-carriers",
+    description: "How moving brokers find and sign carriers — the actual outreach process, what carriers want, how to vet them, and what a signed carrier agreement covers.",
+    date: "Mon, 13 Jul 2026 00:00:00 GMT",
+    guid: "https://brokerfilings.com/blog/how-moving-brokers-find-and-sign-carriers",
+  },
+  {
     title: "Passive Income From Moving Referrals: The HHG Broker Model",
     link: "https://brokerfilings.com/blog/passive-income-from-moving-referrals",
     description: "Passive income from moving referrals is real — but it requires a federal license first. Here's how carrier subscriptions and realtor networks create recurring income.",

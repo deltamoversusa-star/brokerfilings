@@ -18,6 +18,20 @@ const STRIPE_LINK = 'https://buy.stripe.com/28E3cv66Y26qaCK40zgA800'
 
 const articles = [
   {
+    slug: 'moving-broker-leads',
+    title: 'Moving Broker Leads: How to Get Them and What They Actually Cost',
+    excerpt:
+      'Pay-per-lead ads, shared vendor leads, realtor referrals, and organic search — what each channel costs, how each converts, and the stacked approach that works for most licensed brokers.',
+    tag: 'Marketing',
+  },
+  {
+    slug: 'how-moving-brokers-find-and-sign-carriers',
+    title: 'How Moving Brokers Find and Sign Carriers — The Real Process',
+    excerpt:
+      'The carrier network is the operational foundation of every HHG brokerage. Here is where carriers come from, how to vet them, what the outreach call covers, and what a signed agreement should include.',
+    tag: 'Operations',
+  },
+  {
     slug: 'passive-income-from-moving-referrals',
     title: 'Passive Income From Moving Referrals: The HHG Broker Model',
     excerpt:
