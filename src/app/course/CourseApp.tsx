@@ -44,7 +44,7 @@ const COURSE: Week[] = [
     week: 2,
     title: 'Platform Setup',
     lessons: [
-      { id: '2-1', number: '2.1', title: 'Why Platform Choice Matters — What to Look For in a Broker OS', videoId: 'c15f725c-43d8-4dff-b06d-03a0c75f518a' },
+      { id: '2-1', number: '2.1', title: 'Why Platform Choice Matters — What to Look For in a Broker OS', videoId: '8e4e0a28-db89-4886-9039-d20cd9419fd4' },
       { id: '2-2', number: '2.2', title: 'MagickPlat Account Setup + Brokerage Profile', videoId: '015ea158-d3e0-4a47-9297-bb26987917f4', liveDemo: true },
       { id: '2-3', number: '2.3', title: 'Connecting Stripe — Collecting and Holding Payments', videoId: '1cbe239d-34a1-48ba-b8a9-52977a0c0b8c', liveDemo: true },
       { id: '2-4', number: '2.4', title: 'Dashboard Orientation — CRM, Network Builder, Payments', videoId: '27c5426a-f038-43d1-9b64-1e2703a1b951', liveDemo: true },
